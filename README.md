@@ -30,7 +30,7 @@
 
 ⚡ **Vitest** - unit testing for a fast and efficient test setup
 
-🔧 **ESLint** with **Prettier** - for clean and consistent code formatting
+🔧 **ESLint** - for clean and consistent code formatting
 
 🖥 **Vercel** - for effortless deployment and hosting
 
@@ -102,9 +102,9 @@ To add a new route, simply add a new file to `src/routes/` and export route hand
 ### 1. Course Objective Validation
 This API validates a given learning objective and returns feedback, validation results, and suggestions.
 
-- : `POST http://localhost:3000/course-validator`
+- : **Endpoint** `POST http://localhost:3000/course-validator`
 
-- #### Example Request Payload:
+- **Request Payload**:
 ```JSON
 {
   "objective": "I want to learn about AI",
