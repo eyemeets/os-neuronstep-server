@@ -68,6 +68,16 @@
   pnpm build
   ```
 
+## OpenAI API Key
+
+1. Sign up at [OpenAI](https://platform.openai.com/signup) to obtain an API key.
+2. Add your API key to the `.env` file by setting `OPENAI_API_KEY`.
+
+## Image Generation with Stable Diffusion
+
+1. Sign up at [Replicate](https://replicate.com/account/api-tokens) to obtain an API key.
+2. Add your API key to the `.env` file by setting `REPLICATE_API_KEY`.
+
 ### Auto File-Based Routing
 
 This project uses `express-file-routing` to map files directly to routes. For example:

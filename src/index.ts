@@ -3,23 +3,39 @@ import path from 'path'
 import { createRouter } from 'express-file-routing'
 import bodyParser from 'body-parser'
 import fileUpload from 'express-fileupload'
+import cors from 'cors'
 import * as dotenv from 'dotenv'
+import { getLocalNetworkIp } from './utils/utils'
 
 dotenv.config()
 
 const app = express()
 
+// CORS options setup
+const corsOptions = {
+  origin: '*', // Allow requests from any origin
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
+  allowedHeaders: ['Content-Type', 'Authorization'] // Specify allowed headers
+}
+
+app.use(cors(corsOptions))
 app.use(bodyParser.json())
 app.use(fileUpload())
-const port = 3000
 
-app.listen(port, async () => {
-  // Specify the routes directory inside 'src'
+app.use((req, res, next) => {
+  console.log(`Received request: ${req.method} ${req.url}`)
+  next()
+})
+
+const localIp = getLocalNetworkIp() // Get the Wi-Fi IP address dynamically
+const port = 8080
+
+app.listen(port, localIp, async () => {
   await createRouter(app, {
     directory: path.join(__dirname, 'routes')
   })
 
-  console.log(`Running on http://${port}`)
+  console.log(`\n Express server running on http://${localIp}:${port}`)
 })
 
 export default app
