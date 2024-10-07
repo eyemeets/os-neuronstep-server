@@ -149,7 +149,7 @@ After the course objective has been validated, this API performs a detailed anal
   "plan": {
     "title": "Introduction to Artificial Intelligence",
     "description": "This undergraduate curriculum provides an in-depth exploration of artificial intelligence...",
-    "estimated_total_hours": 80,
+    "estimated_total_minutes": 80,
     "learning_objectives": ["Understand core AI concepts", "Assess AI's impacts on society"],
     "key_focus_areas": ["AI technologies", "Ethical considerations", "Practical applications in industry"]
   }

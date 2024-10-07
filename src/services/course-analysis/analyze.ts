@@ -9,6 +9,7 @@ import { ZodCurriculumOutlineSchema, ZodCurriculumPlanSchema } from './schema'
 import type { AssistantResponseFormatOption } from 'openai/resources/beta/threads/threads'
 
 import mockupCurriculumOutline from '../../mockup/curriculum-outline'
+import { generateCourseImagePrompt } from '../../utils/image-prompts'
 
 export async function analyzeContent(params: ValidatedObjective): Promise<CurriculumObjectivePlanAndOutlineStructure> {
   const assistant = await setupAssistantAndThread({
@@ -20,6 +21,8 @@ export async function analyzeContent(params: ValidatedObjective): Promise<Curric
 
   // Step 1: Generate Curriculum Plan
   console.log('Generate Curriculum Plan')
+  console.log('params.useMockupData -> ', params.useMockupData)
+
   const curriculumPlan = params.useMockupData ?
     mockupCurriculumOutline.plan :
     await generateCurriculumPlan({
@@ -33,6 +36,7 @@ export async function analyzeContent(params: ValidatedObjective): Promise<Curric
 
   // Step 4: Generate Main Topics, Sub Topics, and Pages based on the plan
   console.log('Generate Main Topics, Sub Topics, and Pages based on the plan')
+  console.log('params.useMockupData -> ', params.useMockupData)
   const curriculumOutline = params.useMockupData ?
     mockupCurriculumOutline.outline :
     await createContentOutlineForCurriculum({
@@ -43,6 +47,11 @@ export async function analyzeContent(params: ValidatedObjective): Promise<Curric
       responseFormat: zodResponseFormat(ZodCurriculumOutlineSchema, 'validation_response')
     })
 
+  const courseTitle = curriculumOutline.title
+  const courseDescription = curriculumOutline.description
+  console.log('PARAMS -> ', params, '<- params')
+  const courseImagePrompt = generateCourseImagePrompt(params.image_theme, courseTitle, courseDescription)
+  curriculumOutline.image_prompt = courseImagePrompt
   const formattedChapters = curriculumOutline.chapters.map((chapter) => {
     return {
       ...chapter,
@@ -108,6 +117,8 @@ async function createContentOutlineForCurriculum(params: {
     schema: ZodCurriculumOutlineSchema,
     errorMessage: 'Failed to parse educational outline'
   })
+
+  console.log('Received response:', topics) // Add this log
 
   return topics
 }

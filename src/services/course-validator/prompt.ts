@@ -156,7 +156,7 @@ export function createUserPrompt(params: ValidateObjectiveUserData) {
 
   Provide your response in the following JSON format:
 
-    {
+  {
     "valid": true/false,
     "reason": "why the objective is suitable or not for curriculum creation",
     "appropriate_for_curriculum": true/false,
@@ -215,7 +215,30 @@ export function createUserPrompt(params: ValidateObjectiveUserData) {
     "languageName": "Human-readable language name (e.g., 'English')",
     "countryCode": "ISO 3166-1 alpha-2 country code (e.g., 'US' for United States)",
     "countryName": "Human-readable country name (e.g., 'United States')"
-    "curriculum": "The curriculum or educational framework that the user has chosen (${params.curriculum})"
+    "curriculum": "",
+    "image_theme": {
+      "theme": "", // Options: 'cinematic', '3D', 'abstract', 'surreal', 'minimalistic'
+      "tone": "", // Options: 'realistic', 'artistic', 'minimalistic', 'futuristic', 'technical'
+      "style": "", // Options: 'photorealistic', 'illustrative', 'schematic', 'digital', 'hand-drawn' (optional)
+      "complexity": "", // Options: 'simple', 'detailed', 'elaborate', 'complex', 'minimal' (optional)
+      "resolution": "", // Options: 'low', 'medium', 'high', 'ultra' (optional)
+      "color_scheme": "", // Options: 'monochromatic', 'vibrant', 'pastel', 'neutral', 'dark', 'bright' (optional)
+      "theme_description": "A visual representation of the core subject matter, highlighting its key elements in a way that engages the viewer.",
+      "environment": "An environment that complements the subject, adapting to the unique context of the topic without overshadowing the main focus."
+      // Additional fields:
+      "mood": "", // Options: 'calm', 'energetic', 'dramatic', 'mysterious', 'inspiring', 'melancholic', 'uplifting'
+      "lighting": "", // Options: 'natural', 'artificial', 'soft', 'bright', 'shadowy', 'dramatic', 'low-light' (optional)
+      "focus": "", // Options: 'wide', 'close-up', 'medium-shot', 'panorama' (optional)
+      "composition": "", // Options: 'balanced', 'asymmetrical', 'minimal', 'complex' (optional)
+      "background": "", // Options: 'simple', 'complex', 'blurred', 'sharp', 'transparent' (optional)
+      "texture": "", // Options: 'smooth', 'rough', 'glossy', 'matte', 'gritty' (optional)
+      "contrast": "", // Options: 'high', 'low', 'normal' (optional)
+      "depth_of_field": "", // Options: 'shallow', 'deep', 'normal' (optional)
+      "framing": "", // Options: 'central', 'rule-of-thirds', 'symmetrical', 'dynamic' (optional)
+      "shadows": "", // Options: 'strong', 'subtle', 'none' (optional)
+      "saturation": "", // Options: 'high', 'low', 'normal' (optional)
+      "viewpoint": "" // Options: 'bird’s eye', 'eye level', 'worm’s eye', 'tilted' (optional)
+    }
   }
 
   Please ensure that your response is in valid JSON format.`

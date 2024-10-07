@@ -3,189 +3,294 @@ import type { CurriculumPlanAndOutlineStructure } from '../types/curricula'
 export default {
   'plan': {
     'title': 'Introduction to Artificial Intelligence',
-    'description': 'This undergraduate curriculum aims to provide students with a comprehensive understanding of artificial intelligence, covering foundational technologies, ethical implications, and practical applications across industries. The course will blend theoretical knowledge with practical approaches, utilizing various learning styles to enhance student engagement and understanding.',
-    'estimated_total_hours': 80,
+    'description': 'This undergraduate curriculum provides a comprehensive overview of artificial intelligence, its principles, applications, and ethical implications. Students will engage with the content through a balanced approach utilizing reading and writing techniques. The course aims to build critical understanding of AI technologies while fostering essential 21st-century skills.',
+    'image_prompt': 'visual representation of artificial intelligence concepts',
+    'estimated_total_minutes': 100,
     'number_of_main_topics': 10,
     'number_of_sub_topics': 4,
     'number_of_pages': 4,
     'learning_objectives': [
-      'Understand core AI concepts',
-      'Develop critical thinking skills',
-      'Assess AI impacts on society',
-      'Implement basic AI algorithms'
+      'Understanding fundamental AI concepts',
+      'Ability to analyze AI applications',
+      'Awareness of ethical implications surrounding AI'
     ],
     'key_focus_areas': [
-      'AI technologies',
-      'Ethical considerations',
-      'Practical applications in industry',
-      'Programming basics for AI'
+      'History of Artificial Intelligence',
+      'AI Technologies and Applications',
+      'Ethics in AI',
+      'Critical Thinking and Collaboration'
     ],
-    'approach_and_structure': 'The curriculum will adopt a blended learning approach, combining lectures, reading materials, and hands-on projects to facilitate understanding and application of AI principles. The structure will allow for gradual introduction of complex topics while ensuring foundational knowledge is solidified.',
-    'assessment_strategy': 'Assessments will include quizzes to evaluate understanding and projects for demonstrating practical application of AI concepts. Regular feedback will guide student progress.',
-    'engagement_strategy': 'Engagement will be fostered through interactive discussions, collaborative group projects, and opportunities for peer feedback, ensuring students are actively involved in their learning journey.',
-    'adaptive_learning_strategy': 'Learning content will be segmented into manageable sections, allowing students to progress at their own pace and revisit complex concepts as needed. This adaptive strategy will cater to individual comprehension levels.',
+    'approach_and_structure': 'The curriculum employs a project-based learning framework, combining theoretical lessons with practical applications. Each main topic is structured to include interactive lectures, hands-on projects, and group collaborations to enhance student engagement.',
+    'assessment_strategy': 'Assessment will be conducted through a mixture of annotated bibliographies, reflection papers, and quizzes to gauge understanding and analytical skills throughout the course.',
+    'engagement_strategy': 'Engagement will be facilitated through group discussions, online forums, and interactive quizzes, fostering a collaborative learning environment.',
+    'adaptive_learning_strategy': 'The curriculum allows for personalized learning paths, enabling students to select specific modules and adjust difficulty levels based on quiz performance.',
     'prerequisites': [
-      'Basic understanding of computer science concepts',
-      'Familiarity with programming languages (e.g., Python)'
+      'Basic knowledge of computer science principles',
+      'Familiarity with statistics and mathematics'
     ],
     'learning_frameworks': [
       'Mastery Learning',
       'Project-Based Learning',
-      'Blended Learning'
+      'Experiential Learning'
     ],
     'UDL_compliance': true,
     'mastery_learning_applicability': true,
-    'personalization_options': 'Students will have the option to select specific areas of interest within AI for deeper exploration throughout the course.',
+    'personalization_options': 'Students can choose project topics based on their interests and pursue specific modules that align with their career goals.',
     'lang': 'en',
     'languageName': 'English',
     'countryCode': 'US',
     'countryName': 'United States',
     'educational_level': 'undergraduate',
     'tone': 'academic',
-    'assistantId': 'asst_itNboOxd92z810dvz1FMGUX6',
-    'threadId': 'thread_Dsu6z97u8BsptQ8iOk0Grpug'
+    'assistantId': 'asst_eyQrbQwkPx0yMmmSiXU6xduO',
+    'threadId': 'thread_lHw4jcFdZPW6Gb0Gbw47KUcx'
   },
   'outline': {
     'title': 'Introduction to Artificial Intelligence',
-    'description': 'This undergraduate curriculum provides an in-depth exploration of artificial intelligence, including its foundational technologies, ethical issues, and real-world applications. The integrated approach utilizes various learning styles and promotes student engagement through practical exercises and collaborative projects.',
+    'description': 'This undergraduate curriculum provides a comprehensive overview of artificial intelligence, covering its principles, applications, and ethical implications. Through a project-based learning approach, students will enhance their critical understanding of AI while developing essential skills for the 21st century.',
+    'image_prompt': '\n  Generate a abstract image in a futuristic tone that uses a digital style to depict a detailed representation of the course "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should visually represent the overall themes of "Introduction to Artificial Intelligence" and provide an engaging and inspiring introduction to the course. \n  Include visual elements that hint at the key concepts of the course, such as "This undergraduate curriculum provides a comprehensive overview of artificial intelligence, covering its principles, applications, and ethical implications. Through a project-based learning approach, students will enhance their critical understanding of AI while developing essential skills for the 21st century.", in a A digital landscape showcasing AI innovations.. \n  The overall mood should be inspiring, with bright lighting to suggest curiosity, exploration, and knowledge. \n  Use a wide focus to balance between high-level overview and detailed concepts. \n  The composition should be balanced, with a simple background to keep the focus on the key elements of the image. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be shallow, keeping the primary concepts in focus while softening any peripheral elements. \n  Frame the image according to the rule-of-thirds, with none shadows for depth. \n  The colors should have high saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the course theme "Introduction to Artificial Intelligence".\n  ',
     'chapters': [
       {
-        'topic': 'Foundations of AI',
+        'topic': 'Overview of Artificial Intelligence',
+        'image_prompt': '',
         'subtopics': [
           {
-            'subtopic': 'History of AI',
+            'subtopic': 'Definition and Scope of AI',
+            'image_prompt': '',
             'pages': [
               {
-                'block_title': 'Introduction to AI History',
+                'block_title': 'What is AI?',
                 'content_type': 'text_article',
-                'description': 'Overview of the history and evolution of artificial intelligence.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'An introduction to the concepts of artificial intelligence.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Key Milestones in AI Development',
+                'block_title': 'Types of Artificial Intelligence',
                 'content_type': 'text_article',
-                'description': 'Discussing significant milestones that shaped AI.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'An overview of narrow, general, and superintelligence.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Pioneers of AI',
+                'block_title': 'Applications of AI',
                 'content_type': 'text_article',
-                'description': 'Highlighting important figures in AI history.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'How AI is implemented in various fields.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Impact of AI Development',
+                'block_title': 'Challenges in AI',
                 'content_type': 'text_article',
-                'description': 'Examine how AI development has influenced society.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Barriers to the effective use of AI technologies.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               }
             ]
           },
           {
-            'subtopic': 'AI Terminology',
+            'subtopic': 'History of AI Development',
+            'image_prompt': '',
             'pages': [
               {
-                'block_title': 'Basic AI Terms',
+                'block_title': 'Early AI Theories',
                 'content_type': 'text_article',
-                'description': 'Explanation of fundamental terms used in AI.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Exploration of foundational ideas in AI research.',
+                'estimated_time': '4',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Common Acronyms in AI',
+                'block_title': 'Key Milestones in AI',
                 'content_type': 'text_article',
-                'description': 'Overview of common acronyms and what they represent.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Significant events that shaped AI history.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Frameworks and Models',
+                'block_title': 'AI Winter Periods',
                 'content_type': 'text_article',
-                'description': 'Introduction to key AI frameworks and models.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Periods of reduced funding and interest in AI.',
+                'estimated_time': '4',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Navigating AI Literature',
+                'block_title': 'Resurgence of AI',
                 'content_type': 'text_article',
-                'description': 'Guide on understanding AI literature and research.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'The revival of AI interest in recent years.',
+                'estimated_time': '4',
+                'content': '',
+                'image_prompt': ''
               }
             ]
           }
         ]
       },
       {
-        'topic': 'Types of AI',
+        'topic': 'AI Technologies',
+        'image_prompt': '',
         'subtopics': [
           {
-            'subtopic': 'Narrow AI and General AI',
-            'pages': [
-              {
-                'block_title': 'Defining Narrow AI',
-                'content_type': 'text_article',
-                'description': 'Characteristics and examples of Narrow AI.',
-                'estimated_time': 'content',
-                'content': ''
-              },
-              {
-                'block_title': 'Understanding General AI',
-                'content_type': 'text_article',
-                'description': 'Overview of what General AI aims to achieve.',
-                'estimated_time': 'content',
-                'content': ''
-              },
-              {
-                'block_title': 'Comparative Analysis',
-                'content_type': 'text_article',
-                'description': 'Comparison between Narrow AI and General AI.',
-                'estimated_time': 'content',
-                'content': ''
-              },
-              {
-                'block_title': 'Future of AI Types',
-                'content_type': 'text_article',
-                'description': 'Discussion on the evolution of AI categories.',
-                'estimated_time': 'content',
-                'content': ''
-              }
-            ]
-          },
-          {
-            'subtopic': 'Machine Learning vs. Deep Learning',
+            'subtopic': 'Machine Learning',
+            'image_prompt': '',
             'pages': [
               {
                 'block_title': 'Introduction to Machine Learning',
                 'content_type': 'text_article',
-                'description': 'Basic principles of machine learning.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Defining machine learning and its importance.',
+                'estimated_time': '4',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Deep Learning Explained',
+                'block_title': 'Types of Machine Learning',
                 'content_type': 'text_article',
-                'description': 'Understanding the deep learning paradigm.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Overview of supervised, unsupervised, and reinforcement learning.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Differences and Similarities',
+                'block_title': 'Neural Networks',
                 'content_type': 'text_article',
-                'description': 'Compare the two approaches: machine learning and deep learning.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Discussing the structure and function of neural networks.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Applications of Both',
+                'block_title': 'Applications of Machine Learning',
                 'content_type': 'text_article',
-                'description': 'Explore practical applications of these techniques.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Real-world applications and impact of machine learning.',
+                'estimated_time': '4',
+                'content': '',
+                'image_prompt': ''
+              }
+            ]
+          },
+          {
+            'subtopic': 'Natural Language Processing (NLP)',
+            'image_prompt': '',
+            'pages': [
+              {
+                'block_title': 'Understanding NLP',
+                'content_type': 'text_article',
+                'description': 'Introduction to the field of natural language processing.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
+              },
+              {
+                'block_title': 'NLP Techniques',
+                'content_type': 'text_article',
+                'description': 'Basic techniques used in natural language processing.',
+                'estimated_time': '4',
+                'content': '',
+                'image_prompt': ''
+              },
+              {
+                'block_title': 'Applications of NLP',
+                'content_type': 'text_article',
+                'description': 'Exploring how NLP is used in applications like chatbots.',
+                'estimated_time': '4',
+                'content': '',
+                'image_prompt': ''
+              },
+              {
+                'block_title': 'Future of NLP',
+                'content_type': 'text_article',
+                'description': 'Examining future trends in natural language processing.',
+                'estimated_time': '4',
+                'content': '',
+                'image_prompt': ''
+              }
+            ]
+          }
+        ]
+      },
+      {
+        'topic': 'AI Applications',
+        'image_prompt': '',
+        'subtopics': [
+          {
+            'subtopic': 'Healthcare Applications',
+            'image_prompt': '',
+            'pages': [
+              {
+                'block_title': 'AI in Medical Diagnosis',
+                'content_type': 'text_article',
+                'description': 'How AI is transforming medical diagnostics.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
+              },
+              {
+                'block_title': 'Personalized Medicine',
+                'content_type': 'text_article',
+                'description': 'Exploring AI in developing personalized treatment plans.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
+              },
+              {
+                'block_title': 'AI in Drug Development',
+                'content_type': 'text_article',
+                'description': 'The role of AI in speeding up drug discovery processes.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
+              },
+              {
+                'block_title': 'AI in Patient Monitoring',
+                'content_type': 'text_article',
+                'description': 'Monitoring patients using AI technologies.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
+              }
+            ]
+          },
+          {
+            'subtopic': 'Finance and AI',
+            'image_prompt': '',
+            'pages': [
+              {
+                'block_title': 'AI in Fraud Detection',
+                'content_type': 'text_article',
+                'description': 'How AI is used to detect fraudulent transactions.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
+              },
+              {
+                'block_title': 'AI in Trading',
+                'content_type': 'text_article',
+                'description': 'The impact of AI on stock trading strategies.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
+              },
+              {
+                'block_title': 'Risk Assessment with AI',
+                'content_type': 'text_article',
+                'description': 'Using AI for assessing financial risk.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
+              },
+              {
+                'block_title': 'AI in Financial Advisory',
+                'content_type': 'text_article',
+                'description': 'AI-based financial advisory services.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               }
             ]
           }
@@ -193,432 +298,334 @@ export default {
       },
       {
         'topic': 'Ethical Implications of AI',
+        'image_prompt': '',
         'subtopics': [
           {
-            'subtopic': 'AI and Privacy',
+            'subtopic': 'Privacy Concerns',
+            'image_prompt': '',
             'pages': [
               {
-                'block_title': 'Understanding Privacy Issues',
+                'block_title': 'Data Privacy in AI',
                 'content_type': 'text_article',
-                'description': 'Exploration of privacy in the context of AI.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Concerns around personal data usage in AI.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Data Security Risks',
+                'block_title': 'Surveillance Issues',
                 'content_type': 'text_article',
-                'description': 'Analyzing how AI impacts data security.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Impact of AI on surveillance and personal freedom.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Regulations and Compliance',
+                'block_title': 'Consent in AI Systems',
                 'content_type': 'text_article',
-                'description': 'Overview of data protection laws related to AI.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'The importance of user consent in AI applications.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Future of Privacy in AI',
+                'block_title': 'Legal Implications',
                 'content_type': 'text_article',
-                'description': 'Discussion on future implications for privacy.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Understanding legal challenges posed by AI.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               }
             ]
           },
           {
-            'subtopic': 'Bias and Fairness',
+            'subtopic': 'Bias in AI',
+            'image_prompt': '',
             'pages': [
               {
-                'block_title': 'Understanding AI Bias',
+                'block_title': 'Understanding Bias in Algorithms',
                 'content_type': 'text_article',
-                'description': 'Exploration of bias in AI algorithms.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Fundamentals of bias in AI algorithms.',
+                'estimated_time': '4',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Impact of Bias on Society',
+                'block_title': 'Case Studies of AI Bias',
                 'content_type': 'text_article',
-                'description': 'Discuss how bias in AI affects various social groups.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Exploring real-world cases of AI bias.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Fairness in AI Systems',
+                'block_title': 'Mitigating Bias in AI',
                 'content_type': 'text_article',
-                'description': 'Explore methods to achieve fairness in AI.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Strategies to reduce bias in AI systems.',
+                'estimated_time': '4',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Addressing AI Bias',
+                'block_title': 'Ethical Frameworks to Address Bias',
                 'content_type': 'text_article',
-                'description': 'Strategies to mitigate bias in AI developments.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Analyzing ethical approaches to AI bias.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               }
             ]
           }
         ]
       },
       {
-        'topic': 'Applications of AI',
+        'topic': 'AI and Society',
+        'image_prompt': '',
         'subtopics': [
           {
-            'subtopic': 'AI in Healthcare',
+            'subtopic': 'AI in Everyday Life',
+            'image_prompt': '',
             'pages': [
               {
-                'block_title': 'Overview of AI in Healthcare',
+                'block_title': 'AI in Home Automation',
                 'content_type': 'text_article',
-                'description': 'Discussing the role of AI in healthcare.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Exploring AI in smart home technologies.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'AI for Diagnostics',
+                'block_title': 'AI in Social Media',
                 'content_type': 'text_article',
-                'description': 'Exploring how AI is used in diagnostic tools.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'The role of AI in shaping social media experiences.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'AI in Treatment Plans',
+                'block_title': 'AI in Entertainment',
                 'content_type': 'text_article',
-                'description': 'Examining AI\'s role in personalized treatment.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'How AI impacts media and entertainment industries.',
+                'estimated_time': '4',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Ethical Considerations in Healthcare AI',
+                'block_title': 'AI in Transportation',
                 'content_type': 'text_article',
-                'description': 'Exploring the ethical implications of AI in healthcare.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'The integration of AI in transportation systems.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               }
             ]
           },
           {
-            'subtopic': 'AI in Business',
+            'subtopic': 'Future of AI',
+            'image_prompt': '',
             'pages': [
               {
-                'block_title': 'The Role of AI in Business',
+                'block_title': 'AI Trends and Predictions',
                 'content_type': 'text_article',
-                'description': 'Exploring how AI transforms business operations.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Analyzing where AI technology is headed.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'AI for Decision Making',
+                'block_title': 'Job Market Impacts',
                 'content_type': 'text_article',
-                'description': 'Analyzing AI\'s impact on business decision-making.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'The effect of AI on job creation and elimination.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Predictive Analytics with AI',
+                'block_title': 'AI for Good',
                 'content_type': 'text_article',
-                'description': 'Understanding predictive analytics powered by AI.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'How AI can address global challenges.',
+                'estimated_time': '4',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'AI and Customer Experience',
+                'block_title': 'Preparing for an AI-Driven Future',
                 'content_type': 'text_article',
-                'description': 'Examining AI’s influence on customer interactions.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Skills needed to thrive in an AI-enhanced world.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               }
             ]
           }
         ]
       },
       {
-        'topic': 'Programming Basics for AI',
+        'topic': 'Legal and Policy Aspects of AI',
+        'image_prompt': '',
         'subtopics': [
           {
-            'subtopic': 'Introduction to Python for AI',
+            'subtopic': 'Regulation and Legislation',
+            'image_prompt': '',
             'pages': [
               {
-                'block_title': 'Getting Started with Python',
+                'block_title': 'Overview of AI Regulations',
                 'content_type': 'text_article',
-                'description': 'Basics of Python installation and setup.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Current state of regulations impacting AI.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Python Syntax and Basics',
+                'block_title': 'Global Perspectives on AI Legislation',
                 'content_type': 'text_article',
-                'description': 'Overview of basic Python syntax and data types.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Comparing AI regulations in different countries.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Control Structures in Python',
+                'block_title': 'The Role of Ethics in AI Policy',
                 'content_type': 'text_article',
-                'description': 'Understanding control structures in Python.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Examining ethical considerations in AI legislation.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Functions and Modules',
+                'block_title': 'Future Trends in AI Regulation',
                 'content_type': 'text_article',
-                'description': 'Introduction to functions and modules in Python.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Potential future developments in AI regulation.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               }
             ]
           },
           {
-            'subtopic': 'Data Structures and Libraries',
+            'subtopic': 'Intellectual Property Issues',
+            'image_prompt': '',
             'pages': [
               {
-                'block_title': 'Common Data Structures',
+                'block_title': 'AI and Copyright',
                 'content_type': 'text_article',
-                'description': 'Overview of lists, tuples, and dictionaries in Python.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Considering copyright implications of AI-generated content.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Introduction to Libraries',
+                'block_title': 'Patents and AI Innovations',
                 'content_type': 'text_article',
-                'description': 'Understanding libraries used in AI development.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'How patents apply to AI inventions.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Using NumPy and Pandas',
+                'block_title': 'Trademarks and AI',
                 'content_type': 'text_article',
-                'description': 'Introduction to NumPy and Pandas for data manipulation.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Exploring trademark issues related to AI.',
+                'estimated_time': '4',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Visualizing Data with Matplotlib',
+                'block_title': 'Open Source vs. Proprietary AI',
                 'content_type': 'text_article',
-                'description': 'Basic data visualization techniques using Matplotlib.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Comparing open-source and proprietary AI technologies.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               }
             ]
           }
         ]
       },
       {
-        'topic': 'AI Algorithms',
+        'topic': 'AI Tools and Resources',
+        'image_prompt': '',
         'subtopics': [
           {
-            'subtopic': 'Supervised Learning Algorithms',
+            'subtopic': 'Popular AI Frameworks',
+            'image_prompt': '',
             'pages': [
               {
-                'block_title': 'Introduction to Supervised Learning',
+                'block_title': 'Overview of AI Frameworks',
                 'content_type': 'text_article',
-                'description': 'Basic concepts of supervised learning.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Introduction to popular AI frameworks.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Common Supervised Learning Algorithms',
+                'block_title': 'TensorFlow',
                 'content_type': 'text_article',
-                'description': 'Overview of popular supervised learning algorithms.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'A detailed analysis of TensorFlow framework.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Performance Metrics for Supervised Learning',
+                'block_title': 'PyTorch',
                 'content_type': 'text_article',
-                'description': 'Understanding performance metrics in supervised learning.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Exploring capabilities of PyTorch.',
+                'estimated_time': '4',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Case Study: Supervised Learning',
-                'content_type': 'case_study',
-                'description': 'Analysis of a real-world application of supervised learning.',
-                'estimated_time': 'content',
-                'content': ''
+                'block_title': 'Keras',
+                'content_type': 'text_article',
+                'description': 'Understanding Keras framework for deep learning.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               }
             ]
           },
           {
-            'subtopic': 'Unsupervised Learning Algorithms',
+            'subtopic': 'AI Learning Resources',
+            'image_prompt': '',
             'pages': [
               {
-                'block_title': 'Introduction to Unsupervised Learning',
+                'block_title': 'Books for Learning AI',
                 'content_type': 'text_article',
-                'description': 'Functinal overview of unsupervised learning.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Recommended books for AI beginners.',
+                'estimated_time': '4',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Common Unsupervised Learning Techniques',
+                'block_title': 'Online Courses and MOOCs',
                 'content_type': 'text_article',
-                'description': 'Discussion on common unsupervised learning techniques.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Best online resources for AI education.',
+                'estimated_time': '5',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Performance Metrics for Unsupervised Learning',
+                'block_title': 'AI Communities and Forums',
                 'content_type': 'text_article',
-                'description': 'Understanding performance metrics in unsupervised learning.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Engaging with AI communities online.',
+                'estimated_time': '4',
+                'content': '',
+                'image_prompt': ''
               },
               {
-                'block_title': 'Case Study: Unsupervised Learning',
-                'content_type': 'case_study',
-                'description': 'Analysis of a real-world application of unsupervised learning.',
-                'estimated_time': 'content',
-                'content': ''
-              }
-            ]
-          }
-        ]
-      },
-      {
-        'topic': 'Evaluating AI Systems',
-        'subtopics': [
-          {
-            'subtopic': 'Benchmarking AI Performance',
-            'pages': [
-              {
-                'block_title': 'Introduction to Benchmarking',
+                'block_title': 'Events and Workshops',
                 'content_type': 'text_article',
-                'description': 'Basics of benchmarking in AI.',
-                'estimated_time': 'content',
-                'content': ''
-              },
-              {
-                'block_title': 'Benchmarking Techniques',
-                'content_type': 'text_article',
-                'description': 'Overview of various benchmarking techniques.',
-                'estimated_time': 'content',
-                'content': ''
-              },
-              {
-                'block_title': 'Case Study: Performance Benchmarking',
-                'content_type': 'case_study',
-                'description': 'Analysis of a benchmark case study.',
-                'estimated_time': 'content',
-                'content': ''
-              },
-              {
-                'block_title': 'Future Trends in Benchmarking',
-                'content_type': 'text_article',
-                'description': 'Discussion on future directions in benchmarking AI.',
-                'estimated_time': 'content',
-                'content': ''
-              }
-            ]
-          },
-          {
-            'subtopic': 'Assessing Ethical AI',
-            'pages': [
-              {
-                'block_title': 'Introduction to Ethical Assessment',
-                'content_type': 'text_article',
-                'description': 'Fundamentals of assessing ethics in AI.',
-                'estimated_time': 'content',
-                'content': ''
-              },
-              {
-                'block_title': 'Ethical Guidelines for AI Development',
-                'content_type': 'text_article',
-                'description': 'Overview of ethical guidelines in AI.',
-                'estimated_time': 'content',
-                'content': ''
-              },
-              {
-                'block_title': 'Case Studies on Ethical AI',
-                'content_type': 'case_study',
-                'description': 'Analysis of ethical dilemmas in AI.',
-                'estimated_time': 'content',
-                'content': ''
-              },
-              {
-                'block_title': 'Future of Ethical Guidelines',
-                'content_type': 'text_article',
-                'description': 'Discussion on evolving ethical guidelines.',
-                'estimated_time': 'content',
-                'content': ''
-              }
-            ]
-          }
-        ]
-      },
-      {
-        'topic': 'Future of AI',
-        'subtopics': [
-          {
-            'subtopic': 'Emerging Trends',
-            'pages': [
-              {
-                'block_title': 'Overview of Emerging Trends',
-                'content_type': 'text_article',
-                'description': 'Discussion on the latest trends in AI.',
-                'estimated_time': 'content',
-                'content': ''
-              },
-              {
-                'block_title': 'Innovative Applications',
-                'content_type': 'text_article',
-                'description': 'Exploring innovative applications of AI.',
-                'estimated_time': 'content',
-                'content': ''
-              },
-              {
-                'block_title': 'Future Predictions in AI',
-                'content_type': 'text_article',
-                'description': 'Analyzing predictions for the future of AI.',
-                'estimated_time': 'content',
-                'content': ''
-              },
-              {
-                'block_title': 'Preparing for Future Changes',
-                'content_type': 'text_article',
-                'description': 'Discussing ways to prepare for AI advancements.',
-                'estimated_time': 'content',
-                'content': ''
-              }
-            ]
-          },
-          {
-            'subtopic': 'AI in Society',
-            'pages': [
-              {
-                'block_title': 'AI\'s Impact on Employment',
-                'content_type': 'text_article',
-                'description': 'Exploring AI\'s effect on job markets.',
-                'estimated_time': 'content',
-                'content': ''
-              },
-              {
-                'block_title': 'AI and Education',
-                'content_type': 'text_article',
-                'description': 'Discussing AI\'s role in revolutionizing education.',
-                'estimated_time': 'content',
-                'content': ''
-              },
-              {
-                'block_title': 'AI Policy and Regulations',
-                'content_type': 'text_article',
-                'description': 'Overview of policies affecting AI development.',
-                'estimated_time': 'content',
-                'content': ''
-              },
-              {
-                'block_title': 'Future Societal Challenges',
-                'content_type': 'text_article',
-                'description': 'Discussing societal challenges posed by AI.',
-                'estimated_time': 'content',
-                'content': ''
+                'description': 'Participating in AI events for networking.',
+                'estimated_time': '4',
+                'content': '',
+                'image_prompt': ''
               }
             ]
           }
         ]
       }
     ],
-    'assistantId': 'asst_itNboOxd92z810dvz1FMGUX6',
-    'threadId': 'thread_Dsu6z97u8BsptQ8iOk0Grpug'
+    'assistantId': 'asst_eyQrbQwkPx0yMmmSiXU6xduO',
+    'threadId': 'thread_lHw4jcFdZPW6Gb0Gbw47KUcx'
   }
 } as unknown as CurriculumPlanAndOutlineStructure

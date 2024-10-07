@@ -84,7 +84,7 @@ export function createUserPromptForCurriculumPlan(params: ValidatedObjective) {
   ${recommended_learning_frameworks.length > 0 ? recommended_learning_frameworks.join(', ') : 'N/A'}
 
   **Learning Style Alignment:**
-  ${learning_style_alignment.length > 0 ? learning_style_alignment.join(', ') : 'N/A'}
+  ${learning_style_alignment.length > 0 ? learning_style_alignment : 'N/A'}
 
   **Adaptive Learning Recommendations:**
   "${adaptive_learning_recommendations}"
@@ -142,7 +142,7 @@ export function createUserPromptForCurriculumPlan(params: ValidatedObjective) {
   {
     "title": string
     "description": "50 - 100 words about the curriculum"
-    "estimated_total_hours": ${params.estimated_timeframe},
+    "estimated_total_minutes": ${params.estimated_timeframe},
     "number_of_main_topics": number (Between ${courseDetails.topics.min} and ${courseDetails.topics.max} main topics),
     "number_of_sub_topics": number (Between ${courseDetails.subtopics.min} and ${courseDetails.subtopics.max} subtopics per topic.),
     "number_of_pages": number (Between ${courseDetails.pagesPerSubtopic.min} and ${courseDetails.pagesPerSubtopic.max} content pages for each subtopic),
@@ -200,13 +200,16 @@ export function createUserPromptForCurriculumOutlineSchema(params: ValidatedObje
   {
     "title": "Course Title",
     "description": "50 - 100 words about the curriculum.",
+    "image_prompt": ""
     "chapters": [
       {
         "topic": "Main Topic 1",
+        "image_prompt": ""
         "subtopics": [
           {
             "id": "1"
             "subtopic": "Subtopic 1.1",
+            "image_prompt": ""
             "pages": [
               {
                 "id": "1",

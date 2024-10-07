@@ -55,6 +55,30 @@ export interface TopicRange {
   totalHours: { min: number; max: number }
 }
 
+export interface ImageTheme {
+  theme: 'cinematic' | '3D' | 'abstract' | 'surreal' | 'minimalistic'
+  tone: 'realistic' | 'artistic' | 'minimalistic' | 'futuristic' | 'technical'
+  style?: 'photorealistic' | 'illustrative' | 'schematic' | 'digital' | 'hand-drawn' // Optional
+  complexity?: 'simple' | 'detailed' | 'elaborate' | 'complex' | 'minimal' // Optional
+  resolution?: 'low' | 'medium' | 'high' | 'ultra' // Optional
+  color_scheme?: 'monochromatic' | 'vibrant' | 'pastel' | 'neutral' | 'dark' | 'bright' // Optional
+  theme_description: string // Required field for content description
+  environment: string
+  // Additional fields
+  mood: 'calm' | 'energetic' | 'dramatic' | 'mysterious' | 'inspiring' | 'melancholic' | 'uplifting'
+  lighting?: 'natural' | 'artificial' | 'soft' | 'bright' | 'shadowy' | 'dramatic' | 'low-light' // Optional
+  focus?: 'wide' | 'close-up' | 'medium-shot' | 'panorama' // Optional
+  composition?: 'balanced' | 'asymmetrical' | 'minimal' | 'complex' // Optional
+  background?: 'simple' | 'complex' | 'blurred' | 'sharp' | 'transparent' // Optional
+  texture?: 'smooth' | 'rough' | 'glossy' | 'matte' | 'gritty' // Optional
+  contrast?: 'high' | 'low' | 'normal' // Optional
+  depth_of_field?: 'shallow' | 'deep' | 'normal' // Optional
+  framing?: 'central' | 'rule-of-thirds' | 'symmetrical' | 'dynamic' // Optional
+  shadows?: 'strong' | 'subtle' | 'none' // Optional
+  saturation?: 'high' | 'low' | 'normal' // Optional
+  viewpoint?: 'bird’s eye' | 'eye level' | 'worm’s eye' | 'tilted' // Optional
+}
+
 export interface ValidateObjectiveUserData {
   lang: string
   objective: string
@@ -129,6 +153,7 @@ export interface ValidatedObjective {
   curriculum: string
   learning_style: UserLearningPreferences
   tone: UserTonePreferences
+  image_theme: ImageTheme
 }
 
 export interface ContentBlock {
@@ -144,18 +169,14 @@ export interface KnowledgeGraphData {
   relationship: string
 }
 
-export interface UserLearningPreferences {
-  learningStyle: 'visual' | 'auditory' | 'kinesthetic' | 'readingWriting'
-}
+export type UserLearningPreferences = 'visual' | 'auditory' | 'kinesthetic' | 'readingWriting'
 
-export interface UserTonePreferences {
-  tone: 'fun' | 'serious' | 'academic' | 'motivational' | 'satirical' | 'friendly' | 'reflective' | 'inspirational'
-}
+export type UserTonePreferences = 'fun' | 'serious' | 'academic' | 'motivational' | 'satirical' | 'friendly' | 'reflective' | 'inspirational'
 
 export interface CurriculumPlan {
   title: string // Title of the curriculum
   description: string // 50-100 words about the curriculum
-  estimated_total_hours: number // The total estimated hours for the course
+  estimated_total_minutes: number // The total estimated hours for the course
   number_of_main_topics: number // Number of main topics (based on courseDetails.topics)
   number_of_sub_topics: number // Number of subtopics per topic (based on courseDetails.subtopics)
   number_of_pages: number // Number of content pages per subtopic (based on courseDetails.pagesPerSubtopic)
@@ -183,19 +204,25 @@ export interface CurriculumPlan {
 export interface CurriculumOutlineSchema {
   title: string
   description: string
+  image_prompt?: string // Add image_prompt to course-level
   chapters: {
     topic: string
+    image_prompt?: string // Add image_prompt to topic-level
     subtopics: {
       subtopic: string
+      image_prompt?: string // Add image_prompt to subtopic-level
       pages: {
         block_title: string
-        content_type: string
+        content_type: ContentTypeEnum
         description: string
         estimated_time: string
-        content?: string // Allow content to be optional with '?'
+        content?: string
+        image_prompt?: string // Add image_prompt to page-level if needed
       }[]
     }[]
   }[]
+  assistantId?: string
+  threadId?: string
 }
 
 export interface CurriculumPlanAndOutlineStructure {

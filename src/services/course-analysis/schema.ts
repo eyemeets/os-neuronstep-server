@@ -7,7 +7,8 @@ export type CurriculumPlanZod = z.infer<typeof ZodCurriculumPlanSchema>
 export const ZodCurriculumPlanSchema = z.object({
   title: z.string(), // Title of the curriculum
   description: z.string(), // 50-100 words description of the curriculum
-  estimated_total_hours: z.number(), // Total estimated hours
+  image_prompt: z.string(),
+  estimated_total_minutes: z.number(), // Total estimated hours
   number_of_main_topics: z.number(), // Number of main topics (e.g., based on courseDetails.topics)
   number_of_sub_topics: z.number(), // Number of subtopics per topic (e.g., courseDetails.subtopics)
   number_of_pages: z.number(), // Number of content pages per subtopic (e.g., courseDetails.pagesPerSubtopic)
@@ -33,19 +34,23 @@ export const ZodCurriculumPlanSchema = z.object({
 export const ZodCurriculumOutlineSchema = z.object({
   title: z.string(),
   description: z.string(),
+  image_prompt: z.string(),
   chapters: z.array(
     z.object({
       topic: z.string(),
+      image_prompt: z.string(),
       subtopics: z.array(
         z.object({
           subtopic: z.string(),
+          image_prompt: z.string(),
           pages: z.array(
             z.object({
               block_title: z.string(),
               content_type: z.nativeEnum(ContentTypeEnum),  // Using the defined enum for content type
               description: z.string(),
               estimated_time: z.string(),
-              content: z.string().optional()
+              content: z.string().optional(),
+              image_prompt: z.string()
             })
           )
         })

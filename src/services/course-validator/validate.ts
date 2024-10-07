@@ -1,9 +1,9 @@
 import { zodResponseFormat } from 'openai/helpers/zod'
 import { createGPTCompletion } from '../openai'
-import type { ValidateObjectiveUserData, ValidatedObjective } from '../../types/curricula'
+import type { ValidateObjectiveUserData } from '../../types/curricula'
 import { CurriculaSubmissionType } from '../../types/curricula'
 import { createUserPrompt } from './prompt'
-import { SubmissionSchema } from './schema'
+import { ZodSubmissionSchema } from './schema'
 
 /**
  * Function to validate if the objective is educational and suitable for curriculum creation
@@ -16,17 +16,23 @@ import { SubmissionSchema } from './schema'
  * @param {CCSubmissionType} submissionType - The type of submission (TEXT, PDF, DESCRIPTION)
  * @returns {Promise<Object>} Object with validation status, reason, objective summary, and potential subject classification
  */
-export async function validateLearningObjective(params: ValidateObjectiveUserData, submissionType: CurriculaSubmissionType): Promise<ValidatedObjective | false> {
+export async function validateLearningObjective(params: ValidateObjectiveUserData, submissionType: CurriculaSubmissionType) {
   const systemPrompt = getSubmissionTypeSystemPrompt(submissionType)
 
   if (!systemPrompt.length) {
     return false
   }
 
+  const schema = ZodSubmissionSchema({
+    curriculum: `The curriculum or educational framework that the user has chosen (${params.curriculum})`,
+    friendly_feedback: `Constructive feedback provided in the user's preferred language (${params.lang})`,
+    educational_level: `The educational level chosen by the user (${params.educationLevel})`,
+    tone: `The tone for the curriculum as selected by the user (${params.tone})`,
+    learning_style_alignment: `Learning styles (${params.learningStyle}) that align with the curriculum`
+  })
+
   const userPrompt = createUserPrompt(params)
-
-  const response_format = zodResponseFormat(SubmissionSchema, 'validation_response')
-
+  const response_format = zodResponseFormat(schema, 'validation_response')
   const completion = await createGPTCompletion(systemPrompt, userPrompt, response_format)
 
   if (!completion) {
@@ -41,10 +47,14 @@ export async function validateLearningObjective(params: ValidateObjectiveUserDat
     return false
   }
 
-  // Validate parsed JSON against the schema
   try {
-    const validatedData = SubmissionSchema.parse(parsedJson)
-    return validatedData // Todo -> fix type error
+    const validatedData = schema.parse(parsedJson)
+    validatedData.curriculum = params.curriculum
+    validatedData.lang = params.lang
+    validatedData.educational_level = params.educationLevel
+    validatedData.learning_style_alignment = params.learningStyle
+
+    return validatedData
   }
   catch (validationError) {
     return false

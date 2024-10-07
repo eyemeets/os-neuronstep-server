@@ -17,7 +17,7 @@ export function createInitialInstructionPrompt(params: CurriculumObjectivePlanAn
   - **Tone:** ${params.plan.tone}
   - **Language:** ${params.plan.languageName} (${params.plan.lang})
   - **Country:** ${params.plan.countryName} (${params.plan.countryCode})
-  - **Total Estimated Hours:** ${params.plan.estimated_total_hours}
+  - **Total Estimated Hours:** ${params.plan.estimated_total_minutes}
   - **Number of Main Topics:** ${params.plan.number_of_main_topics}
   - **Number of Subtopics per Topic:** ${params.plan.number_of_sub_topics}
   - **Number of Content Pages per Subtopic:** ${params.plan.number_of_pages}
@@ -98,7 +98,7 @@ export function createContentPromptForBlock(
   - **Tone:** ${params.plan.tone}
   - **Language:** ${params.plan.languageName} (${params.plan.lang})
   - **Country:** ${params.plan.countryName} (${params.plan.countryCode})
-  - **Total Estimated Hours:** ${params.plan.estimated_total_hours}
+  - **Total Estimated Hours:** ${params.plan.estimated_total_minutes}
 
   **Chapter Details:**
   - **Chapter Title:** ${chapter.topic}
