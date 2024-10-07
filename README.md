@@ -2,7 +2,7 @@
 
 ## NeuronStep Course Curriculum Generator
 
-**NeuronStep** is a curriculum validation and course content generation system powered by AI. It helps create, analyze, and validate course objectives, curricula, and outlines, making it a valuable tool for educators, content creators, and course designers.
+**NeuronStep** is an AI-driven course generation system designed for students, educators, course creators, and anyone interested in structured learning. By leveraging the "gpt-4o-mini" model, it creates, analyzes, and validates course objectives, curricula, and outlines. NeuronStep utilizes educational frameworks like Bloom's Taxonomy and Cognitive Load Theory, providing users with a structured, adaptive learning experience tailored to their needs.
 
 ## Features
 - **Course Objective Validation**: Validate learning objectives against curricula and receive feedback on their suitability.

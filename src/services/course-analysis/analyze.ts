@@ -9,7 +9,7 @@ import { ZodCurriculumOutlineSchema, ZodCurriculumPlanSchema } from './schema'
 import type { AssistantResponseFormatOption } from 'openai/resources/beta/threads/threads'
 
 import mockupCurriculumOutline from '../../mockup/curriculum-outline'
-import { generateCourseImagePrompt } from '../../utils/image-prompts'
+import { generateCourseImagePrompt, generatePageImagePrompt, generateSubtopicImagePrompt, generateTopicImagePrompt } from '../../utils/image-prompts'
 
 export async function analyzeContent(params: ValidatedObjective): Promise<CurriculumObjectivePlanAndOutlineStructure> {
   const assistant = await setupAssistantAndThread({
@@ -49,19 +49,30 @@ export async function analyzeContent(params: ValidatedObjective): Promise<Curric
 
   const courseTitle = curriculumOutline.title
   const courseDescription = curriculumOutline.description
-  console.log('PARAMS -> ', params, '<- params')
+
   const courseImagePrompt = generateCourseImagePrompt(params.image_theme, courseTitle, courseDescription)
   curriculumOutline.image_prompt = courseImagePrompt
+
   const formattedChapters = curriculumOutline.chapters.map((chapter) => {
+    const topicImagePrompt = generateTopicImagePrompt(params.image_theme, courseTitle)
+
     return {
       ...chapter,
+      image_prompt: topicImagePrompt,
       subtopics: chapter.subtopics.map((subtopic) => {
+        const subtopicImagePrompt = generateSubtopicImagePrompt(params.image_theme, courseTitle)
+
         return {
           ...subtopic,
-          pages: subtopic.pages.map((page) => ({
-            ...page,
-            content: page.content || '' // Ensure content always has a value
-          }))
+          image_prompt: subtopicImagePrompt,
+          pages: subtopic.pages.map((page) => {
+            //const pageImagePrompt = generatePageImagePrompt(params.image_theme, courseTitle)
+            return {
+              ...page,
+              content: page.content || '' // Ensure content always has a value
+              // image_prompt: pageImagePrompt
+            }
+          })
         }
       })
     }
