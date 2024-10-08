@@ -2,8 +2,8 @@ import type { ValidateObjectiveUserData } from '../../types/curricula'
 import { courseDurationRange, generateLearningStyleDescription, generateToneDescription } from '../../utils/curricula'
 
 export function createUserPrompt(params: ValidateObjectiveUserData) {
-  const courseDetails = courseDurationRange(params.educationLevel)
-  const learningStyle = generateLearningStyleDescription(params.learningStyle)
+  const courseDetails = courseDurationRange(params.education_level)
+  const learningStyle = generateLearningStyleDescription(params.learning_style)
   const tone = generateToneDescription(params.tone)
   return `
   A user has submitted a request. Analyze the following objective: "${params.objective}". 
@@ -15,14 +15,14 @@ export function createUserPrompt(params: ValidateObjectiveUserData) {
   Timeframe in hours: "${params.timeframe || 'N/A'}",  
   The user prefers to follow the curriculum of school / university / educational institution "${params.curriculum}"
 
-  The user prefers the course to be at the ${params.educationLevel} level, which means the course will cover:
+  The user prefers the course to be at the ${params.education_level} level, which means the course will cover:
 
   - **Total hours**: Between ${courseDetails.totalHours.min} and ${courseDetails.totalHours.max} hours.
   - **Topics**: Between ${courseDetails.topics.min} and ${courseDetails.topics.max} main topics.
   - **Subtopics per topic**: Between ${courseDetails.subtopics.min} and ${courseDetails.subtopics.max} subtopics per topic.
   - **Content pages per subtopic**: Between ${courseDetails.pagesPerSubtopic.min} and ${courseDetails.pagesPerSubtopic.max} content pages for each subtopic.
   
-  The user has selected the **"${params.learningStyle}"** learning style, so content should be adapted to: "${learningStyle}".
+  The user has selected the **"${params.learning_style}"** learning style, so content should be adapted to: "${learningStyle}".
   The user prefers the tone to be **"${params.tone}"**, so content should be generated in a **"${tone}"** tone.
 
   Please write in the user's language (${params.lang}) when filling out the JSON schema.
@@ -168,7 +168,7 @@ export function createUserPrompt(params: ValidateObjectiveUserData) {
     "objective_match": true/false,
     "relevance_score": number,
     "complexity_score": number,
-    "educational_level": ${params.educationLevel},
+    "educational_level": ${params.education_level},
     "tone": "${params.tone}"
     "missing_information": ["missing key elements"],
     "ethical_compliance": true/false,
@@ -198,7 +198,7 @@ export function createUserPrompt(params: ValidateObjectiveUserData) {
     },
     "recommended_learning_frameworks": ["Mastery Learning", "Spaced Repetition", ...],
     "learning_style_alignment": ["Visual", "Auditory", "Kinesthetic"],
-    "learning_style": ${params.learningStyle}",
+    "learning_style": ${params.learning_style}",
     "sub_learning_objectives": ["Sub-objective 1", "Sub-objective 2", ...],
     "prerequisites": ["Prerequisite knowledge or skills"],
     "estimated_time_to_complete": "Estimated time in hours,

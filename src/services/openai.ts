@@ -105,6 +105,41 @@ export async function createRunThreadWithAssistant(params: {
 }
 
 /**
+ * Creates and runs a thread stream with the specified assistant and instructions, and processes the response in real-time using a callback.
+ *
+ * @param params - The thread ID, assistant ID, instructions, and the response format.
+ * @param processChunk - A callback function to handle each chunk of streamed data.
+ * @returns The stream object of the assistant's processing.
+ */
+export async function createRunThreadStreamWithAssistant(params: {
+  thread: {
+    id: string
+    assistantId: string
+    instructions: string
+  }
+  responseFormat: AssistantResponseFormatOption | null | undefined
+}, processChunk: (chunk: string) => void) {
+  const run = openai.beta.threads.runs.stream(
+    params.thread.id,
+    {
+      assistant_id: params.thread.assistantId,
+      instructions: params.thread.instructions,
+      response_format: params.responseFormat
+    },
+  )
+
+  // Async iteration over the stream
+  for await (const chunk of run) {
+    const text = chunk.toString()  // Assuming the chunk is a buffer
+
+    // Call the provided callback to process the streamed text
+    processChunk(text)
+  }
+
+  return run  // Returning the stream object in case it's needed elsewhere
+}
+
+/**
  * Retrieves a GPT run by its thread and run IDs.
  *
  * @param params - The thread ID and run ID to retrieve the run.
@@ -143,27 +178,50 @@ export async function createRunAndRetrieveMessages(params: {
   assistantId: string
   assistantInstructions: string
   responseFormat: AssistantResponseFormatOption | null | undefined
-}) {
+  stream: boolean
+}, processChunk?: (chunk: string) => void) {
 
+  // Step 1: Handle streaming
+  if (params.stream) {
+    if (!processChunk) {
+      throw new Error('processChunk callback is required when streaming is enabled.')
+    }
+
+    // Call the stream version of the function and handle the streamed data with the callback
+    await createRunThreadStreamWithAssistant(
+      {
+        thread: {
+          id: params.threadId,
+          assistantId: params.assistantId,
+          instructions: params.assistantInstructions
+        },
+        responseFormat: params.responseFormat
+      },
+      processChunk // Pass the callback function for processing chunks
+    )
+  }
+
+  else {
   // Step 4: Create a Run
-  const assistantRun = await createRunThreadWithAssistant({
-    thread: {
-      id: params.threadId,
-      assistantId: params.assistantId,
-      instructions: params.assistantInstructions
-    },
-    responseFormat: params.responseFormat
-  })
+    const assistantRun = await createRunThreadWithAssistant({
+      thread: {
+        id: params.threadId,
+        assistantId: params.assistantId,
+        instructions: params.assistantInstructions
+      },
+      responseFormat: params.responseFormat
+    })
 
-  // Step 5: Polling Logic to Check Completion Status
-  const assistantRunStatus = await retrieveGPTRun({
-    threadId: assistantRun.thread_id,
-    runId: assistantRun.id
-  })
+    // Step 5: Polling Logic to Check Completion Status
+    const assistantRunStatus = await retrieveGPTRun({
+      threadId: assistantRun.thread_id,
+      runId: assistantRun.id
+    })
 
-  // Step 6: Once completed, list messages
-  const contentAnalysisMessages = await listGPTMessages(assistantRunStatus.thread_id)
-  return contentAnalysisMessages
+    // Step 6: Once completed, list messages
+    const contentAnalysisMessages = await listGPTMessages(assistantRunStatus.thread_id)
+    return contentAnalysisMessages
+  }
 }
 
 /**
@@ -171,18 +229,21 @@ export async function createRunAndRetrieveMessages(params: {
  *
  * @template T - The expected type of the parsed response.
  * @param params - Parameters including the assistant ID, thread ID, user message content, response format, schema for validation, and error message.
+ * @param processChunk - A callback function to handle streaming chunks, only used when `stream` is true.
  * @returns The parsed response of type T.
  * @throws An error if the assistant does not provide a response or if validation fails.
  */
 export async function sendMessageAndParseResponse<T>(params: {
+  stream: boolean
   assistantId: string
   threadId: string
   userMessageContent: string
   responseFormat: AssistantResponseFormatOption | null | undefined
   schema: z.ZodType<T>
   errorMessage: string
-}): Promise<T> {
+}, processChunk?: (chunk: string) => void): Promise<T | undefined> {
   const { assistantId, threadId, userMessageContent, responseFormat, schema, errorMessage } = params
+
   // Add user message to thread
   await addMessageToGPTThread({
     msg: {
@@ -194,13 +255,39 @@ export async function sendMessageAndParseResponse<T>(params: {
     }
   })
 
+  let messages  // Declare messages variable
+
   // Run assistant
-  const messages = await createRunAndRetrieveMessages({
-    threadId: threadId,
-    assistantId: assistantId,
-    assistantInstructions: '', // Instructions are already set in the assistant
-    responseFormat: responseFormat
-  })
+  if (params.stream) {
+    // Handle streaming case
+    if (!processChunk) {
+      throw new Error('processChunk callback is required when streaming is enabled.')
+    }
+
+    await createRunAndRetrieveMessages({
+      threadId: threadId,
+      assistantId: assistantId,
+      assistantInstructions: '', // Instructions are already set in the assistant
+      responseFormat: responseFormat,
+      stream: params.stream
+    }, processChunk)
+
+    // When streaming is enabled, return nothing since processChunk will handle the stream
+    return
+  }
+  else {
+    // Handle non-streaming case
+    messages = await createRunAndRetrieveMessages({
+      threadId: threadId,
+      assistantId: assistantId,
+      assistantInstructions: '', // Instructions are already set in the assistant
+      responseFormat: responseFormat,
+      stream: params.stream
+    })
+
+    // If no messages are returned, exit early
+    if (!messages?.length) return
+  }
 
   // Extract the assistant's response
   const assistantMessage = messages.find((message) => message.role === 'assistant')
@@ -246,6 +333,7 @@ export async function sendMessageAndParseResponse<T>(params: {
   return parsedResponse
 }
 
+
 /**
  * Sets up a GPT Assistant and creates a corresponding thread.
  *
@@ -278,3 +366,28 @@ export async function setupAssistantAndThread(params: CreateAssistantParams): Pr
     }
   }
 }
+
+export async function generateDalleImage(prompt: string, size: '1024x1024' | '256x256' | '512x512' | '1792x1024' | '1024x1792' = '1024x1024') {
+  if (!size) {
+    size = '1024x1024' // Default value in case size is undefined
+  }
+
+  try {
+    const response = await openai.images.generate({
+      model: 'dall-e-3',
+      prompt,
+      n: 1,
+      size
+    })
+
+    const imageUrl = response.data[0].url
+
+    console.log(JSON.stringify(response.data, null, 2))
+    return imageUrl
+  }
+  catch (error) {
+    console.error('Error generating image:', error)
+    throw new Error('Image generation failed')
+  }
+}
+

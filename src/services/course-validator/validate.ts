@@ -26,9 +26,9 @@ export async function validateLearningObjective(params: ValidateObjectiveUserDat
   const schema = ZodSubmissionSchema({
     curriculum: `The curriculum or educational framework that the user has chosen (${params.curriculum})`,
     friendly_feedback: `Constructive feedback provided in the user's preferred language (${params.lang})`,
-    educational_level: `The educational level chosen by the user (${params.educationLevel})`,
+    educational_level: `The educational level chosen by the user (${params.education_level})`,
     tone: `The tone for the curriculum as selected by the user (${params.tone})`,
-    learning_style_alignment: `Learning styles (${params.learningStyle}) that align with the curriculum`
+    learning_style_alignment: `Learning styles (${params.learning_style}) that align with the curriculum`
   })
 
   const userPrompt = createUserPrompt(params)
@@ -51,8 +51,9 @@ export async function validateLearningObjective(params: ValidateObjectiveUserDat
     const validatedData = schema.parse(parsedJson)
     validatedData.curriculum = params.curriculum
     validatedData.lang = params.lang
-    validatedData.educational_level = params.educationLevel
-    validatedData.learning_style_alignment = params.learningStyle
+    validatedData.educational_level = params.education_level
+    validatedData.learning_style_alignment = params.learning_style
+    validatedData.user_query = params.objective
 
     return validatedData
   }

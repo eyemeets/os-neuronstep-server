@@ -7,7 +7,7 @@ export type CurriculumPlanZod = z.infer<typeof ZodCurriculumPlanSchema>
 export const ZodCurriculumPlanSchema = z.object({
   title: z.string(), // Title of the curriculum
   description: z.string(), // 50-100 words description of the curriculum
-  image_prompt: z.string(),
+  //image_prompt: z.string(),
   estimated_total_minutes: z.number(), // Total estimated hours
   number_of_main_topics: z.number(), // Number of main topics (e.g., based on courseDetails.topics)
   number_of_sub_topics: z.number(), // Number of subtopics per topic (e.g., courseDetails.subtopics)

@@ -2,28 +2,27 @@
 
 import { zodResponseFormat } from 'openai/helpers/zod'
 import { sendMessageAndParseResponse, setupAssistantAndThread } from '../openai' // Adjust the import path as needed
-import type { CurriculumObjectivePlanAndOutlineStructure, CurriculumPlan } from '../../types/curricula'
+import type { CurriculumPlan } from '../../types/curricula'
 import type { ValidatedObjective } from '../../types/curricula'
 import { createUserPromptForCurriculumOutlineSchema, createUserPromptForCurriculumPlan } from './prompt'
 import { ZodCurriculumOutlineSchema, ZodCurriculumPlanSchema } from './schema'
 import type { AssistantResponseFormatOption } from 'openai/resources/beta/threads/threads'
 
 import mockupCurriculumOutline from '../../mockup/curriculum-outline'
-import { generateCourseImagePrompt, generatePageImagePrompt, generateSubtopicImagePrompt, generateTopicImagePrompt } from '../../utils/image-prompts'
+import { generateCourseImagePrompt, generateSubtopicImagePrompt, generateTopicImagePrompt } from '../../utils/image-prompts'
 
-export async function analyzeContent(params: ValidatedObjective): Promise<CurriculumObjectivePlanAndOutlineStructure> {
+export async function analyzeContent(params: ValidatedObjective) {
   const assistant = await setupAssistantAndThread({
     name: 'Curriculum Designer',
     instructions: 'You are an expert curriculum designer with a deep understanding of educational frameworks and adaptive learning strategies.',
-    assistantId: params.assistantId,
+    assistantId: params.assistant_id,
     threadId: params.threadId
   })
 
   // Step 1: Generate Curriculum Plan
   console.log('Generate Curriculum Plan')
-  console.log('params.useMockupData -> ', params.useMockupData)
 
-  const curriculumPlan = params.useMockupData ?
+  const curriculumPlan = params.use_mockup_data ?
     mockupCurriculumOutline.plan :
     await generateCurriculumPlan({
       validatedObjective: params,
@@ -36,41 +35,53 @@ export async function analyzeContent(params: ValidatedObjective): Promise<Curric
 
   // Step 4: Generate Main Topics, Sub Topics, and Pages based on the plan
   console.log('Generate Main Topics, Sub Topics, and Pages based on the plan')
-  console.log('params.useMockupData -> ', params.useMockupData)
-  const curriculumOutline = params.useMockupData ?
-    mockupCurriculumOutline.outline :
-    await createContentOutlineForCurriculum({
-      validatedObjective: params,
-      curriculumPlan: curriculumPlan,
-      threadId: assistant.threadId,
-      assistantId: assistant.assistantId,
-      responseFormat: zodResponseFormat(ZodCurriculumOutlineSchema, 'validation_response')
-    })
+  console.log('params.use_mockup_data -> ', params.use_mockup_data)
 
+  // Generate content
+  // Streamed content generation using the callback to handle streamed chunks
+  await createContentOutlineForCurriculum({
+    validatedObjective: params,
+    curriculumPlan: curriculumPlan,
+    threadId: assistant.threadId,
+    assistantId: assistant.assistantId,
+    responseFormat: zodResponseFormat(ZodCurriculumOutlineSchema, 'validation_response')
+  }, (chunk) => {
+    console.log('Streamed chunk:', chunk)
+    // Handle each streamed chunk (you can accumulate, process, or update the UI with it)
+  })
+
+
+  // IN HERE WE NEED TO HANDLE STREAM BY OBJECT, ONCE ONE OBJECT IS PARSED, ON TO A NEW ONE.
+
+
+  // Format data
   const courseTitle = curriculumOutline.title
   const courseDescription = curriculumOutline.description
 
-  const courseImagePrompt = generateCourseImagePrompt(params.image_theme, courseTitle, courseDescription)
+  console.log('user_query', params.user_query)
+
+  const courseImagePrompt = generateCourseImagePrompt(params.image_theme, courseTitle, courseDescription, params.user_query)
   curriculumOutline.image_prompt = courseImagePrompt
+  console.log('courseImagePrompt -> ', courseImagePrompt)
 
   const formattedChapters = curriculumOutline.chapters.map((chapter) => {
-    const topicImagePrompt = generateTopicImagePrompt(params.image_theme, courseTitle)
+    const topicImagePrompt = generateTopicImagePrompt(params.image_theme, chapter.topic)
+    console.log('topicImagePrompt -> ', topicImagePrompt)
 
     return {
       ...chapter,
-      image_prompt: topicImagePrompt,
+      image_prompt: topicImagePrompt, // This assigns the image prompt for the topic
       subtopics: chapter.subtopics.map((subtopic) => {
-        const subtopicImagePrompt = generateSubtopicImagePrompt(params.image_theme, courseTitle)
+        const subtopicImagePrompt = generateSubtopicImagePrompt(params.image_theme, subtopic.subtopic)
+        console.log('subtopicImagePrompt -> ', subtopicImagePrompt)
 
         return {
           ...subtopic,
           image_prompt: subtopicImagePrompt,
           pages: subtopic.pages.map((page) => {
-            //const pageImagePrompt = generatePageImagePrompt(params.image_theme, courseTitle)
             return {
               ...page,
               content: page.content || '' // Ensure content always has a value
-              // image_prompt: pageImagePrompt
             }
           })
         }
@@ -92,10 +103,12 @@ async function generateCurriculumPlan(params: {
   assistantId: string
   threadId: string
   responseFormat: AssistantResponseFormatOption | null | undefined
-}): Promise<CurriculumPlan> {
+}): Promise<CurriculumPlan | undefined> {
   const userMsgForCurriculumPlan = createUserPromptForCurriculumPlan(params.validatedObjective)
 
+  // Send the message and get the curriculum plan
   const plan = await sendMessageAndParseResponse<CurriculumPlan>({
+    stream: false,
     assistantId: params.assistantId,
     threadId: params.threadId,
     userMessageContent: userMsgForCurriculumPlan,
@@ -104,6 +117,12 @@ async function generateCurriculumPlan(params: {
     errorMessage: 'Failed to parse curriculum plan'
   })
 
+  // If plan is undefined, return undefined
+  if (!plan) {
+    return undefined
+  }
+
+  // Assign the assistantId and threadId to the plan
   plan.assistantId = params.assistantId
   plan.threadId = params.threadId
 
@@ -112,24 +131,32 @@ async function generateCurriculumPlan(params: {
 
 async function createContentOutlineForCurriculum(params: {
   validatedObjective: ValidatedObjective
-  curriculumPlan: CurriculumPlan
+  curriculumPlan: CurriculumPlan | undefined
   assistantId: string
   threadId: string
   responseFormat: AssistantResponseFormatOption | null | undefined
-}) {
+}, processChunk: (chunk: string) => void) {
+  // Handle case where curriculumPlan is undefined
+  if (!params.curriculumPlan) {
+    console.error('Curriculum plan is undefined, cannot proceed with content outline generation.')
+    return undefined // Return early if curriculumPlan is undefined
+  }
 
+  // Create the user message for curriculum outline schema
   const userMsgForTopics = createUserPromptForCurriculumOutlineSchema(params.validatedObjective, params.curriculumPlan)
 
+  // Use sendMessageAndParseResponse with streaming enabled and pass the processChunk callback
   const topics = await sendMessageAndParseResponse({
+    stream: true, // Streaming enabled
     assistantId: params.assistantId,
     threadId: params.threadId,
     userMessageContent: userMsgForTopics,
     responseFormat: params.responseFormat,
     schema: ZodCurriculumOutlineSchema,
     errorMessage: 'Failed to parse educational outline'
-  })
+  }, processChunk) // Pass the callback function to handle streamed chunks
 
-  console.log('Received response:', topics) // Add this log
+  console.log('Received response:', topics) // Log the final response when streaming is complete
 
-  return topics
+  return topics // Return the final topics (could be valid or undefined)
 }

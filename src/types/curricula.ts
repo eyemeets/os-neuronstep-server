@@ -82,9 +82,9 @@ export interface ImageTheme {
 export interface ValidateObjectiveUserData {
   lang: string
   objective: string
-  educationLevel: EducationLevel
+  education_level: EducationLevel
   curriculum: string
-  learningStyle: UserLearningPreferences
+  learning_style: UserLearningPreferences
   tone: UserTonePreferences
   outcome: string
   age: number
@@ -94,14 +94,17 @@ export interface ValidateObjectiveUserData {
 }
 
 export interface ValidatedObjective {
-  useMockupData?: boolean
-  assistantId?: string
+  user_query: string
+  title: string
+  course_description: string
+  use_mockup_data?: boolean
+  assistant_id?: string
   threadId?: string
   valid: boolean
   lang?: string
-  languageName?: string
-  countryCode?: string
-  countryName?: string
+  language_name?: string
+  country_code?: string
+  country_name?: string
   reason: string
   friendly_feedback: string
   content_description: string
@@ -154,6 +157,7 @@ export interface ValidatedObjective {
   learning_style: UserLearningPreferences
   tone: UserTonePreferences
   image_theme: ImageTheme
+  visual_elements: string[]
 }
 
 export interface ContentBlock {

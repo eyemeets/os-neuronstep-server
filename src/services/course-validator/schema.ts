@@ -25,9 +25,11 @@ export const imageThemeSchema = z.object({
 })
 
 export const ZodSubmissionSchema = (params: CustomUserSchemaParams) => z.object({
+  user_query: z.string().optional().describe('Leave this as an empty string'),
   valid: z.boolean().describe('Indicates if the objective is valid for curriculum creation'),
   reason: z.string().describe('Explanation of why the objective is suitable or not'),
-
+  title: z.string().describe('The title of the course to provide context and identification.'),
+  course_description: z.string().describe('A brief description of the course content and objectives for the user.'),
   curriculum: z.string()
     .describe(params.curriculum || 'The curriculum or educational framework that the user has chosen'),
 
@@ -106,5 +108,6 @@ export const ZodSubmissionSchema = (params: CustomUserSchemaParams) => z.object(
   country_code: z.string().optional().describe('ISO 3166-1 alpha-2 country code'),
   country_name: z.string().optional().describe('The name of the country associated with the curriculum'),
   image_theme: imageThemeSchema.describe('Schema defining the image generation parameters for curriculum visuals')
+  //visual_elements: z.array(z.string()).describe('An array of visual elements to be included in the image prompt.')
 })
 

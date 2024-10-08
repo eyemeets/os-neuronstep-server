@@ -1,13 +1,15 @@
+import * as dotenv from 'dotenv'
+
+dotenv.config()
+
 import express from 'express'
 import path from 'path'
 import { createRouter } from 'express-file-routing'
 import bodyParser from 'body-parser'
 import fileUpload from 'express-fileupload'
 import cors from 'cors'
-import * as dotenv from 'dotenv'
 import { getLocalNetworkIp } from './utils/utils'
-
-dotenv.config()
+import { generateDalleImage } from './services/openai'
 
 const app = express()
 
@@ -35,7 +37,25 @@ app.listen(port, localIp, async () => {
     directory: path.join(__dirname, 'routes')
   })
 
+  const prompt = 'Create a concise 20-word photorealistic image prompt focused on \"I want to learn about AI\" with a cinematic style. Include: real-world visuals and professional settings. Exclude: Ensure there is no text, sci-fi, or holographic elements in the image.'.trim()
+  // Works great w dale-3 -> const promptAlt = 'A serene classroom setting with books, a philosopher statue, and abstract thought bubbles, representing philosophy study.'
   console.log(`\n Express server running on http://${localIp}:${port}`)
+  console.log('OPENAI_API_KEY:', process.env.OPENAI_API_KEY)
+  //const url = await generateDalleImage(prompt)
+  //console.log('Url -> ', url)
+  return
+
+  // const url = await generateDalleImage(prompt)
+  // console.log('Url -> ', url)
+  /*const output = await replicate.run(
+    'stability-ai/stable-diffusion', // The model you want to use
+    {
+      input: {
+        prompt
+      }
+    }
+  )
+  console.log(output)*/
 })
 
 export default app

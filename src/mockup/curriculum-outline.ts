@@ -3,128 +3,134 @@ import type { CurriculumPlanAndOutlineStructure } from '../types/curricula'
 export default {
   'plan': {
     'title': 'Introduction to Artificial Intelligence',
-    'description': 'This undergraduate curriculum provides a comprehensive overview of artificial intelligence, its principles, applications, and ethical implications. Students will engage with the content through a balanced approach utilizing reading and writing techniques. The course aims to build critical understanding of AI technologies while fostering essential 21st-century skills.',
-    'image_prompt': 'visual representation of artificial intelligence concepts',
-    'estimated_total_minutes': 100,
+    'description': 'This undergraduate curriculum provides a comprehensive overview of artificial intelligence, encompassing its key concepts, technologies, applications, and ethical considerations. Designed to foster critical thinking and creativity, this course prepares students for real-world challenges in various industries through interactive learning and project-based assessments.',
+    'image_prompt': '',
+    'estimated_total_minutes': 4800,
     'number_of_main_topics': 10,
     'number_of_sub_topics': 4,
     'number_of_pages': 4,
     'learning_objectives': [
-      'Understanding fundamental AI concepts',
-      'Ability to analyze AI applications',
-      'Awareness of ethical implications surrounding AI'
+      'Define key concepts in artificial intelligence.',
+      'Explain different types of AI technologies.',
+      'Discuss the applications of AI in various industries.',
+      'Evaluate the ethical implications of AI.'
     ],
     'key_focus_areas': [
-      'History of Artificial Intelligence',
-      'AI Technologies and Applications',
-      'Ethics in AI',
-      'Critical Thinking and Collaboration'
+      'Understanding AI concepts and terminologies',
+      'Applications of AI across industries',
+      'Ethical implications of AI',
+      'Technical AI methodologies'
     ],
-    'approach_and_structure': 'The curriculum employs a project-based learning framework, combining theoretical lessons with practical applications. Each main topic is structured to include interactive lectures, hands-on projects, and group collaborations to enhance student engagement.',
-    'assessment_strategy': 'Assessment will be conducted through a mixture of annotated bibliographies, reflection papers, and quizzes to gauge understanding and analytical skills throughout the course.',
-    'engagement_strategy': 'Engagement will be facilitated through group discussions, online forums, and interactive quizzes, fostering a collaborative learning environment.',
-    'adaptive_learning_strategy': 'The curriculum allows for personalized learning paths, enabling students to select specific modules and adjust difficulty levels based on quiz performance.',
+    'approach_and_structure': 'The curriculum follows a structured approach combining theoretical lectures with practical applications through project-based learning, encouraging collaboration and communication among learners.',
+    'assessment_strategy': 'Assessments will include quizzes, a final project involving the application of AI technologies, and peer-reviewed papers, ensuring diverse evaluation methods.',
+    'engagement_strategy': 'Engagement will be achieved through interactive discussions, group projects, and analysis of real-world case studies to enhance collaborative learning.',
+    'adaptive_learning_strategy': 'The curriculum incorporates modular content that progresses from basic to advanced topics, allowing learners to customize their path based on interests and performance assessments.',
     'prerequisites': [
-      'Basic knowledge of computer science principles',
-      'Familiarity with statistics and mathematics'
+      'Basic understanding of programming concepts.',
+      'Familiarity with data analysis techniques.'
     ],
     'learning_frameworks': [
       'Mastery Learning',
-      'Project-Based Learning',
-      'Experiential Learning'
+      'Project-Based Learning'
     ],
     'UDL_compliance': true,
     'mastery_learning_applicability': true,
-    'personalization_options': 'Students can choose project topics based on their interests and pursue specific modules that align with their career goals.',
+    'personalization_options': 'Learners can select specific modules to focus on, depending on their interest areas within AI, allowing for personalized deeper learning.',
     'lang': 'en',
     'languageName': 'English',
     'countryCode': 'US',
     'countryName': 'United States',
     'educational_level': 'undergraduate',
     'tone': 'academic',
-    'assistantId': 'asst_eyQrbQwkPx0yMmmSiXU6xduO',
-    'threadId': 'thread_lHw4jcFdZPW6Gb0Gbw47KUcx'
+    'assistantId': 'asst_492qTAIFLjdYqaJyDDjIvXfa',
+    'threadId': 'thread_QLIkuaUxbpVg9OSXU1UvaYjz'
   },
   'outline': {
     'title': 'Introduction to Artificial Intelligence',
-    'description': 'This undergraduate curriculum provides a comprehensive overview of artificial intelligence, covering its principles, applications, and ethical implications. Through a project-based learning approach, students will enhance their critical understanding of AI while developing essential skills for the 21st century.',
-    'image_prompt': '\n  Generate a abstract image in a futuristic tone that uses a digital style to depict a detailed representation of the course "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should visually represent the overall themes of "Introduction to Artificial Intelligence" and provide an engaging and inspiring introduction to the course. \n  Include visual elements that hint at the key concepts of the course, such as "This undergraduate curriculum provides a comprehensive overview of artificial intelligence, covering its principles, applications, and ethical implications. Through a project-based learning approach, students will enhance their critical understanding of AI while developing essential skills for the 21st century.", in a A digital landscape showcasing AI innovations.. \n  The overall mood should be inspiring, with bright lighting to suggest curiosity, exploration, and knowledge. \n  Use a wide focus to balance between high-level overview and detailed concepts. \n  The composition should be balanced, with a simple background to keep the focus on the key elements of the image. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be shallow, keeping the primary concepts in focus while softening any peripheral elements. \n  Frame the image according to the rule-of-thirds, with none shadows for depth. \n  The colors should have high saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the course theme "Introduction to Artificial Intelligence".\n  ',
+    'description': 'This undergraduate curriculum provides a comprehensive overview of artificial intelligence, encompassing its key concepts, technologies, applications, and ethical considerations. Designed to foster critical thinking and creativity, this course prepares students for real-world challenges in various industries through interactive learning and project-based assessments.',
+    'image_prompt': 'Create a concise 20-word photorealistic image prompt focused on "I want to learn about AI" with a cinematic style. Include: real-world visuals and professional settings. Exclude: Ensure there is no text, sci-fi, or holographic elements in the image.',
     'chapters': [
       {
-        'topic': 'Overview of Artificial Intelligence',
-        'image_prompt': '',
+        'topic': 'Foundations of Artificial Intelligence',
+        'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the topic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
         'subtopics': [
           {
-            'subtopic': 'Definition and Scope of AI',
-            'image_prompt': '',
+            'subtopic': 'History of AI',
+            'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the subtopic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
             'pages': [
               {
-                'block_title': 'What is AI?',
+                'block_title': 'Introduction to AI History',
                 'content_type': 'text_article',
-                'description': 'An introduction to the concepts of artificial intelligence.',
-                'estimated_time': '5',
+                'description': 'Overview of the history of AI development.',
+                'estimated_time': 'time: 5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'Types of Artificial Intelligence',
+                'block_title': 'Milestones in AI',
                 'content_type': 'text_article',
-                'description': 'An overview of narrow, general, and superintelligence.',
-                'estimated_time': '5',
+                'description': 'Key milestones in the evolution of AI technologies.',
+                'estimated_time': '> 5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'Applications of AI',
+                'block_title': 'AI Winters and Resurgence',
                 'content_type': 'text_article',
-                'description': 'How AI is implemented in various fields.',
-                'estimated_time': '5',
+                'description': 'Understanding the periods where AI faced challenges.',
+                'estimated_time': '> 5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'Challenges in AI',
+                'block_title': 'The Modern Era of AI',
                 'content_type': 'text_article',
-                'description': 'Barriers to the effective use of AI technologies.',
-                'estimated_time': '5',
+                'description': 'Exploring contemporary advancements in AI.',
+                'estimated_time': '> 5 minutes',
                 'content': '',
                 'image_prompt': ''
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        'topic': 'Key Concepts in AI',
+        'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the topic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
+        'subtopics': [
           {
-            'subtopic': 'History of AI Development',
-            'image_prompt': '',
+            'subtopic': 'Core Definitions',
+            'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the subtopic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
             'pages': [
               {
-                'block_title': 'Early AI Theories',
+                'block_title': 'Defining Artificial Intelligence',
                 'content_type': 'text_article',
-                'description': 'Exploration of foundational ideas in AI research.',
-                'estimated_time': '4',
+                'description': 'What is Artificial Intelligence?',
+                'estimated_time': '> 5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'Key Milestones in AI',
+                'block_title': 'Types of AI',
                 'content_type': 'text_article',
-                'description': 'Significant events that shaped AI history.',
-                'estimated_time': '5',
+                'description': 'Overview of different classifications of AI.',
+                'estimated_time': '> 5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'AI Winter Periods',
+                'block_title': 'AI vs. Human Intelligence',
                 'content_type': 'text_article',
-                'description': 'Periods of reduced funding and interest in AI.',
-                'estimated_time': '4',
+                'description': 'A comparison of AI and human cognitive processes.',
+                'estimated_time': '> 5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'Resurgence of AI',
+                'block_title': 'Machine Learning and Deep Learning',
                 'content_type': 'text_article',
-                'description': 'The revival of AI interest in recent years.',
-                'estimated_time': '4',
+                'description': 'Understanding the foundational principles of ML and DL.',
+                'estimated_time': '> 5 minutes',
                 'content': '',
                 'image_prompt': ''
               }
@@ -134,17 +140,17 @@ export default {
       },
       {
         'topic': 'AI Technologies',
-        'image_prompt': '',
+        'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the topic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
         'subtopics': [
           {
             'subtopic': 'Machine Learning',
-            'image_prompt': '',
+            'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the subtopic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
             'pages': [
               {
                 'block_title': 'Introduction to Machine Learning',
                 'content_type': 'text_article',
-                'description': 'Defining machine learning and its importance.',
-                'estimated_time': '4',
+                'description': 'Explaining ML and its significance in AI.',
+                'estimated_time': '> 5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
@@ -152,61 +158,67 @@ export default {
                 'block_title': 'Types of Machine Learning',
                 'content_type': 'text_article',
                 'description': 'Overview of supervised, unsupervised, and reinforcement learning.',
-                'estimated_time': '5',
+                'estimated_time': '> 5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'Neural Networks',
+                'block_title': 'Common Algorithms',
                 'content_type': 'text_article',
-                'description': 'Discussing the structure and function of neural networks.',
-                'estimated_time': '5',
+                'description': 'Popular algorithms applied in ML.',
+                'estimated_time': '> 5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
                 'block_title': 'Applications of Machine Learning',
                 'content_type': 'text_article',
-                'description': 'Real-world applications and impact of machine learning.',
-                'estimated_time': '4',
+                'description': 'Exploring where ML is applied in various sectors.',
+                'estimated_time': '> 5 minutes',
                 'content': '',
                 'image_prompt': ''
               }
             ]
-          },
+          }
+        ]
+      },
+      {
+        'topic': 'Natural Language Processing (NLP)',
+        'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the topic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
+        'subtopics': [
           {
-            'subtopic': 'Natural Language Processing (NLP)',
-            'image_prompt': '',
+            'subtopic': 'Basics of NLP',
+            'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the subtopic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
             'pages': [
               {
-                'block_title': 'Understanding NLP',
+                'block_title': 'Defining Natural Language Processing',
                 'content_type': 'text_article',
-                'description': 'Introduction to the field of natural language processing.',
-                'estimated_time': '5',
+                'description': 'Introduction to the field of NLP.',
+                'estimated_time': '> 5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'NLP Techniques',
+                'block_title': 'Techniques in NLP',
                 'content_type': 'text_article',
-                'description': 'Basic techniques used in natural language processing.',
-                'estimated_time': '4',
+                'description': 'Common techniques and methods used in NLP.',
+                'estimated_time': '5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
                 'block_title': 'Applications of NLP',
                 'content_type': 'text_article',
-                'description': 'Exploring how NLP is used in applications like chatbots.',
-                'estimated_time': '4',
+                'description': 'Real-world applications and examples of NLP.',
+                'estimated_time': '5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'Future of NLP',
+                'block_title': 'Challenges in NLP',
                 'content_type': 'text_article',
-                'description': 'Examining future trends in natural language processing.',
-                'estimated_time': '4',
+                'description': 'Exploring limitations and challenges in NLP implementations.',
+                'estimated_time': '5 minutes',
                 'content': '',
                 'image_prompt': ''
               }
@@ -215,80 +227,86 @@ export default {
         ]
       },
       {
-        'topic': 'AI Applications',
-        'image_prompt': '',
+        'topic': 'Computer Vision',
+        'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the topic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
+        'subtopics': [
+          {
+            'subtopic': 'Introduction to Computer Vision',
+            'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the subtopic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
+            'pages': [
+              {
+                'block_title': 'Understanding Computer Vision',
+                'content_type': 'text_article',
+                'description': 'Exploring what computer vision entails.',
+                'estimated_time': '5 minutes',
+                'content': '',
+                'image_prompt': ''
+              },
+              {
+                'block_title': 'Techniques in Computer Vision',
+                'content_type': 'text_article',
+                'description': 'Overview of common techniques and frameworks.',
+                'estimated_time': '5 minutes',
+                'content': '',
+                'image_prompt': ''
+              },
+              {
+                'block_title': 'Applications of Computer Vision',
+                'content_type': 'text_article',
+                'description': 'Use cases and real-world applications.',
+                'estimated_time': '5 minutes',
+                'content': '',
+                'image_prompt': ''
+              },
+              {
+                'block_title': 'Future Trends in Computer Vision',
+                'content_type': 'text_article',
+                'description': 'Examining upcoming trends and innovations.',
+                'estimated_time': '5 minutes',
+                'content': '',
+                'image_prompt': ''
+              }
+            ]
+          }
+        ]
+      },
+      {
+        'topic': 'AI in Industry',
+        'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the topic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
         'subtopics': [
           {
             'subtopic': 'Healthcare Applications',
-            'image_prompt': '',
+            'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the subtopic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
             'pages': [
               {
-                'block_title': 'AI in Medical Diagnosis',
+                'block_title': 'AI in Diagnostics',
                 'content_type': 'text_article',
-                'description': 'How AI is transforming medical diagnostics.',
-                'estimated_time': '5',
+                'description': 'Utilization of AI tools in diagnosing health conditions.',
+                'estimated_time': '5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'Personalized Medicine',
+                'block_title': 'AI in Treatment Planning',
                 'content_type': 'text_article',
-                'description': 'Exploring AI in developing personalized treatment plans.',
-                'estimated_time': '5',
+                'description': 'How AI assists in creating treatment plans.',
+                'estimated_time': '5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'AI in Drug Development',
+                'block_title': 'AI in Drug Discovery',
                 'content_type': 'text_article',
-                'description': 'The role of AI in speeding up drug discovery processes.',
-                'estimated_time': '5',
+                'description': 'Using AI to discover new medications.',
+                'estimated_time': '5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
                 'block_title': 'AI in Patient Monitoring',
                 'content_type': 'text_article',
-                'description': 'Monitoring patients using AI technologies.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              }
-            ]
-          },
-          {
-            'subtopic': 'Finance and AI',
-            'image_prompt': '',
-            'pages': [
-              {
-                'block_title': 'AI in Fraud Detection',
-                'content_type': 'text_article',
-                'description': 'How AI is used to detect fraudulent transactions.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'AI in Trading',
-                'content_type': 'text_article',
-                'description': 'The impact of AI on stock trading strategies.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'Risk Assessment with AI',
-                'content_type': 'text_article',
-                'description': 'Using AI for assessing financial risk.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'AI in Financial Advisory',
-                'content_type': 'text_article',
-                'description': 'AI-based financial advisory services.',
-                'estimated_time': '5',
+                'description': 'Monitoring patients using AI-driven technologies.',
+                'estimated_time': '5 minutes',
                 'content': '',
                 'image_prompt': ''
               }
@@ -297,80 +315,42 @@ export default {
         ]
       },
       {
-        'topic': 'Ethical Implications of AI',
-        'image_prompt': '',
+        'topic': 'Ethics in AI',
+        'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the topic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
         'subtopics': [
           {
-            'subtopic': 'Privacy Concerns',
-            'image_prompt': '',
+            'subtopic': 'Understanding AI Ethics',
+            'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the subtopic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
             'pages': [
               {
-                'block_title': 'Data Privacy in AI',
+                'block_title': 'Definition of AI Ethics',
                 'content_type': 'text_article',
-                'description': 'Concerns around personal data usage in AI.',
-                'estimated_time': '5',
+                'description': 'What constitutes AI ethics?',
+                'estimated_time': '> 5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'Surveillance Issues',
+                'block_title': 'Ethical Implications of AI',
                 'content_type': 'text_article',
-                'description': 'Impact of AI on surveillance and personal freedom.',
-                'estimated_time': '5',
+                'description': 'Examining potential ethical dilemmas.',
+                'estimated_time': '> 5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'Consent in AI Systems',
+                'block_title': 'Case Studies in AI Ethics',
                 'content_type': 'text_article',
-                'description': 'The importance of user consent in AI applications.',
-                'estimated_time': '5',
+                'description': 'Reviewing case studies reflecting ethical considerations.',
+                'estimated_time': '> 5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'Legal Implications',
+                'block_title': 'Regulations and Guidelines',
                 'content_type': 'text_article',
-                'description': 'Understanding legal challenges posed by AI.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              }
-            ]
-          },
-          {
-            'subtopic': 'Bias in AI',
-            'image_prompt': '',
-            'pages': [
-              {
-                'block_title': 'Understanding Bias in Algorithms',
-                'content_type': 'text_article',
-                'description': 'Fundamentals of bias in AI algorithms.',
-                'estimated_time': '4',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'Case Studies of AI Bias',
-                'content_type': 'text_article',
-                'description': 'Exploring real-world cases of AI bias.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'Mitigating Bias in AI',
-                'content_type': 'text_article',
-                'description': 'Strategies to reduce bias in AI systems.',
-                'estimated_time': '4',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'Ethical Frameworks to Address Bias',
-                'content_type': 'text_article',
-                'description': 'Analyzing ethical approaches to AI bias.',
-                'estimated_time': '5',
+                'description': 'Looking at existing frameworks governing AI ethics.',
+                'estimated_time': '> 5 minutes',
                 'content': '',
                 'image_prompt': ''
               }
@@ -379,80 +359,42 @@ export default {
         ]
       },
       {
-        'topic': 'AI and Society',
-        'image_prompt': '',
+        'topic': 'Future of AI',
+        'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the topic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
         'subtopics': [
           {
-            'subtopic': 'AI in Everyday Life',
-            'image_prompt': '',
+            'subtopic': 'Emerging Trends',
+            'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the subtopic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
             'pages': [
               {
-                'block_title': 'AI in Home Automation',
+                'block_title': 'Current Trends in AI',
                 'content_type': 'text_article',
-                'description': 'Exploring AI in smart home technologies.',
-                'estimated_time': '5',
+                'description': 'Exploring what\'s trending in AI today.',
+                'estimated_time': '5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'AI in Social Media',
+                'block_title': 'Future Innovations',
                 'content_type': 'text_article',
-                'description': 'The role of AI in shaping social media experiences.',
-                'estimated_time': '5',
+                'description': 'Innovations anticipated in the AI space.',
+                'estimated_time': '5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'AI in Entertainment',
+                'block_title': 'Impact of AI on Society',
                 'content_type': 'text_article',
-                'description': 'How AI impacts media and entertainment industries.',
-                'estimated_time': '4',
+                'description': 'Social implications of widespread AI adoption.',
+                'estimated_time': '5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'AI in Transportation',
+                'block_title': 'Global AI Projects',
                 'content_type': 'text_article',
-                'description': 'The integration of AI in transportation systems.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              }
-            ]
-          },
-          {
-            'subtopic': 'Future of AI',
-            'image_prompt': '',
-            'pages': [
-              {
-                'block_title': 'AI Trends and Predictions',
-                'content_type': 'text_article',
-                'description': 'Analyzing where AI technology is headed.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'Job Market Impacts',
-                'content_type': 'text_article',
-                'description': 'The effect of AI on job creation and elimination.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'AI for Good',
-                'content_type': 'text_article',
-                'description': 'How AI can address global challenges.',
-                'estimated_time': '4',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'Preparing for an AI-Driven Future',
-                'content_type': 'text_article',
-                'description': 'Skills needed to thrive in an AI-enhanced world.',
-                'estimated_time': '5',
+                'description': 'Reviewing significant AI projects across the globe.',
+                'estimated_time': '5 minutes',
                 'content': '',
                 'image_prompt': ''
               }
@@ -461,162 +403,42 @@ export default {
         ]
       },
       {
-        'topic': 'Legal and Policy Aspects of AI',
-        'image_prompt': '',
-        'subtopics': [
-          {
-            'subtopic': 'Regulation and Legislation',
-            'image_prompt': '',
-            'pages': [
-              {
-                'block_title': 'Overview of AI Regulations',
-                'content_type': 'text_article',
-                'description': 'Current state of regulations impacting AI.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'Global Perspectives on AI Legislation',
-                'content_type': 'text_article',
-                'description': 'Comparing AI regulations in different countries.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'The Role of Ethics in AI Policy',
-                'content_type': 'text_article',
-                'description': 'Examining ethical considerations in AI legislation.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'Future Trends in AI Regulation',
-                'content_type': 'text_article',
-                'description': 'Potential future developments in AI regulation.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              }
-            ]
-          },
-          {
-            'subtopic': 'Intellectual Property Issues',
-            'image_prompt': '',
-            'pages': [
-              {
-                'block_title': 'AI and Copyright',
-                'content_type': 'text_article',
-                'description': 'Considering copyright implications of AI-generated content.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'Patents and AI Innovations',
-                'content_type': 'text_article',
-                'description': 'How patents apply to AI inventions.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'Trademarks and AI',
-                'content_type': 'text_article',
-                'description': 'Exploring trademark issues related to AI.',
-                'estimated_time': '4',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'Open Source vs. Proprietary AI',
-                'content_type': 'text_article',
-                'description': 'Comparing open-source and proprietary AI technologies.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              }
-            ]
-          }
-        ]
-      },
-      {
-        'topic': 'AI Tools and Resources',
-        'image_prompt': '',
+        'topic': 'AI Tools and Frameworks',
+        'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the topic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
         'subtopics': [
           {
             'subtopic': 'Popular AI Frameworks',
-            'image_prompt': '',
+            'image_prompt': '\n  Generate a abstract image in a technical tone that uses a digital style to depict a detailed representation of the subtopic "Introduction to Artificial Intelligence". \n  The image should be in high resolution with a vibrant color scheme. \n  It should showcase key elements related to "Introduction to Artificial Intelligence" in a clean, high-tech environment. \n  The overall mood should be inspiring, with bright lighting to suggest clarity and knowledge. \n  Use a wide focus that captures both details and the overall structure of "Introduction to Artificial Intelligence". \n  The composition should be balanced, with a complex background to keep the focus on the key elements. \n  The textures should be smooth, and the contrast should be high to ensure the elements stand out clearly. \n  The depth of field should be normal, keeping the main objects in focus while softening the background. \n  Frame the image according to the rule-of-thirds, with subtle shadows for depth. \n  The colors should have normal saturation, and the viewpoint should be at eye level to make the viewer feel directly connected to the theme "Introduction to Artificial Intelligence".\n  ',
             'pages': [
               {
-                'block_title': 'Overview of AI Frameworks',
+                'block_title': 'Introduction to AI Frameworks',
                 'content_type': 'text_article',
-                'description': 'Introduction to popular AI frameworks.',
-                'estimated_time': '5',
+                'description': 'Understanding popular AI frameworks.',
+                'estimated_time': '5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'TensorFlow',
+                'block_title': 'TensorFlow Overview',
                 'content_type': 'text_article',
-                'description': 'A detailed analysis of TensorFlow framework.',
-                'estimated_time': '5',
+                'description': 'Exploring TensorFlow for AI development.',
+                'estimated_time': '5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'PyTorch',
+                'block_title': 'PyTorch Overview',
                 'content_type': 'text_article',
-                'description': 'Exploring capabilities of PyTorch.',
-                'estimated_time': '4',
+                'description': 'Utilizing PyTorch in AI applications.',
+                'estimated_time': '5 minutes',
                 'content': '',
                 'image_prompt': ''
               },
               {
-                'block_title': 'Keras',
+                'block_title': 'Comparison of Frameworks',
                 'content_type': 'text_article',
-                'description': 'Understanding Keras framework for deep learning.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              }
-            ]
-          },
-          {
-            'subtopic': 'AI Learning Resources',
-            'image_prompt': '',
-            'pages': [
-              {
-                'block_title': 'Books for Learning AI',
-                'content_type': 'text_article',
-                'description': 'Recommended books for AI beginners.',
-                'estimated_time': '4',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'Online Courses and MOOCs',
-                'content_type': 'text_article',
-                'description': 'Best online resources for AI education.',
-                'estimated_time': '5',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'AI Communities and Forums',
-                'content_type': 'text_article',
-                'description': 'Engaging with AI communities online.',
-                'estimated_time': '4',
-                'content': '',
-                'image_prompt': ''
-              },
-              {
-                'block_title': 'Events and Workshops',
-                'content_type': 'text_article',
-                'description': 'Participating in AI events for networking.',
-                'estimated_time': '4',
+                'description': 'Comparing different AI frameworks available.',
+                'estimated_time': '5 minutes',
                 'content': '',
                 'image_prompt': ''
               }
@@ -625,7 +447,7 @@ export default {
         ]
       }
     ],
-    'assistantId': 'asst_eyQrbQwkPx0yMmmSiXU6xduO',
-    'threadId': 'thread_lHw4jcFdZPW6Gb0Gbw47KUcx'
+    'assistantId': 'asst_492qTAIFLjdYqaJyDDjIvXfa',
+    'threadId': 'thread_QLIkuaUxbpVg9OSXU1UvaYjz'
   }
 } as unknown as CurriculumPlanAndOutlineStructure
