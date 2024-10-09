@@ -1,5 +1,6 @@
 // content-analysis/schema.ts
 import { z } from 'zod'
+import type { CurriculumOutlineSchema } from '../../types/curricula'
 import { ContentTypeEnum } from '../../types/curricula'
 
 export type CurriculumPlanZod = z.infer<typeof ZodCurriculumPlanSchema>
@@ -60,3 +61,34 @@ export const ZodCurriculumOutlineSchema = z.object({
   assistantId: z.string().optional(), // Add this field
   threadId: z.string().optional()    // Add this field
 })
+
+
+export const emptyCurriculumOutlineSchema: CurriculumOutlineSchema = {
+  title: '', // Title of the course, to be populated later
+  description: '', // Description of the course, to be populated later
+  image_prompt: '', // Optional course-level image prompt
+  chapters: [
+    {
+      topic: '', // Topic of the chapter, to be populated later
+      image_prompt: '', // Optional image prompt for the chapter
+      subtopics: [
+        {
+          subtopic: '', // Subtopic name, to be populated later
+          image_prompt: '', // Optional image prompt for the subtopic
+          pages: [
+            {
+              block_title: '', // Title of the page, to be populated later
+              content_type: '' as ContentTypeEnum, // Content type, e.g., 'text', 'video', etc.
+              description: '', // Description of the page
+              estimated_time: '', // Estimated time for the content
+              content: '', // Optional content for the page
+              image_prompt: '' // Optional image prompt for the page
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  assistantId: '', // Optional assistantId
+  threadId: '' // Optional threadId
+}

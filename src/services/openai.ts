@@ -119,25 +119,32 @@ export async function createRunThreadStreamWithAssistant(params: {
   }
   responseFormat: AssistantResponseFormatOption | null | undefined
 }, processChunk: (chunk: string) => void) {
-  const run = openai.beta.threads.runs.stream(
+  const stream = openai.beta.threads.runs.stream(
     params.thread.id,
     {
       assistant_id: params.thread.assistantId,
       instructions: params.thread.instructions,
       response_format: params.responseFormat
-    },
+    }
   )
 
-  // Async iteration over the stream
-  for await (const chunk of run) {
-    const text = chunk.toString()  // Assuming the chunk is a buffer
+  const reader = stream.toReadableStream().getReader() // Get a reader from the stream
 
-    // Call the provided callback to process the streamed text
-    processChunk(text)
+  // Read the chunks asynchronously
+  let done: boolean | undefined
+  while (!done) {
+    const { value, done: streamDone } = await reader.read()
+    done = streamDone
+
+    if (value) {
+      const text = new TextDecoder().decode(value) // Convert the value to a string
+      processChunk(text) // Pass the chunk to the provided callback
+    }
   }
 
-  return run  // Returning the stream object in case it's needed elsewhere
+  return stream // Returning the stream object if needed
 }
+
 
 /**
  * Retrieves a GPT run by its thread and run IDs.
@@ -178,7 +185,7 @@ export async function createRunAndRetrieveMessages(params: {
   assistantId: string
   assistantInstructions: string
   responseFormat: AssistantResponseFormatOption | null | undefined
-  stream: boolean
+  stream?: boolean
 }, processChunk?: (chunk: string) => void) {
 
   // Step 1: Handle streaming
@@ -234,7 +241,7 @@ export async function createRunAndRetrieveMessages(params: {
  * @throws An error if the assistant does not provide a response or if validation fails.
  */
 export async function sendMessageAndParseResponse<T>(params: {
-  stream: boolean
+  stream?: boolean
   assistantId: string
   threadId: string
   userMessageContent: string
@@ -255,7 +262,7 @@ export async function sendMessageAndParseResponse<T>(params: {
     }
   })
 
-  let messages  // Declare messages variable
+  let messages: any[] = [] // Initialize messages as an empty array to avoid "used before assigned" error
 
   // Run assistant
   if (params.stream) {
@@ -277,7 +284,7 @@ export async function sendMessageAndParseResponse<T>(params: {
   }
   else {
     // Handle non-streaming case
-    messages = await createRunAndRetrieveMessages({
+    const retrievedMessages = await createRunAndRetrieveMessages({
       threadId: threadId,
       assistantId: assistantId,
       assistantInstructions: '', // Instructions are already set in the assistant
@@ -285,8 +292,12 @@ export async function sendMessageAndParseResponse<T>(params: {
       stream: params.stream
     })
 
+    if (retrievedMessages) {
+      messages = retrievedMessages // Assign messages only if retrievedMessages exists
+    }
+
     // If no messages are returned, exit early
-    if (!messages?.length) return
+    if (!messages.length) return
   }
 
   // Extract the assistant's response
@@ -300,7 +311,7 @@ export async function sendMessageAndParseResponse<T>(params: {
 
   if (assistantMessage.content && Array.isArray(assistantMessage.content)) {
     const textContentBlock = assistantMessage.content.find(
-      (contentItem): contentItem is MessageContentText => contentItem.type === 'text' && !!contentItem.text
+      (contentItem: { type: string; text: any }): contentItem is MessageContentText => contentItem.type === 'text' && !!contentItem.text
     )
     if (textContentBlock) {
       assistantResponse = textContentBlock.text.value
@@ -332,6 +343,7 @@ export async function sendMessageAndParseResponse<T>(params: {
 
   return parsedResponse
 }
+
 
 
 /**

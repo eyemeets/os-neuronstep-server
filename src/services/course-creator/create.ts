@@ -13,9 +13,11 @@ export async function createContentForCourse(params: CurriculumObjectivePlanAndO
   if (!assistantId || !threadId) {
     return 'Assistant ID or Thread ID is required but was not defined.'
   }
+
   // Step 1: Send initial instruction to set context
   const initialPrompt = createInitialInstructionPrompt(params)
   const initialResponse = await sendMessageAndParseResponse<InitialInstructionResponse>({
+    stream: false,
     assistantId,
     threadId,
     userMessageContent: initialPrompt,
@@ -24,7 +26,14 @@ export async function createContentForCourse(params: CurriculumObjectivePlanAndO
     schema: ZodInitialInstructionResponseSchema
   })
 
-  console.log('Initial Instruction Confirmation:', initialResponse.confirmation)
+  // Check if initialResponse is not undefined
+  if (initialResponse) {
+    console.log('Initial Instruction Confirmation:', initialResponse.confirmation)
+  }
+  else {
+    console.error('Failed to receive initial response.')
+    return 'Failed to receive initial response.'
+  }
 
   // Step 2: Iterate over chapters, subtopics, and pages to generate content
   for (const chapter of params.outline.chapters.slice(0, 1)) {
@@ -39,6 +48,7 @@ export async function createContentForCourse(params: CurriculumObjectivePlanAndO
         const contentPrompt = createContentPromptForBlock(params, chapter, subtopic, page)
 
         const contentResponse = await sendMessageAndParseResponse<BlockContentResponse>({
+          stream: false,
           assistantId,
           threadId,
           userMessageContent: contentPrompt,
@@ -47,9 +57,15 @@ export async function createContentForCourse(params: CurriculumObjectivePlanAndO
           schema: ZodBlockContentResponseSchema
         })
 
-        // Here, you would typically save the generated content to your database or assign it to the page object
-        page.content = contentResponse.content
-        console.log(`Content generated for block: ${page.block_title}`)
+        // Check if contentResponse is not undefined
+        if (contentResponse) {
+          page.content = contentResponse.content
+          console.log(`Content generated for block: ${page.block_title}`)
+        }
+        else {
+          console.error(`Failed to generate content for block: ${page.block_title}`)
+          return `Failed to generate content for block: ${page.block_title}`
+        }
       }
     }
   }
@@ -57,3 +73,4 @@ export async function createContentForCourse(params: CurriculumObjectivePlanAndO
   console.log('Content generation completed for course:', params.plan.title)
   return params.outline
 }
+

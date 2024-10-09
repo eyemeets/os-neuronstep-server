@@ -35,25 +35,22 @@ export async function analyzeContent(params: ValidatedObjective) {
 
   // Step 4: Generate Main Topics, Sub Topics, and Pages based on the plan
   console.log('Generate Main Topics, Sub Topics, and Pages based on the plan')
-  console.log('params.use_mockup_data -> ', params.use_mockup_data)
 
   // Generate content
-  // Streamed content generation using the callback to handle streamed chunks
-  await createContentOutlineForCurriculum({
-    validatedObjective: params,
-    curriculumPlan: curriculumPlan,
-    threadId: assistant.threadId,
-    assistantId: assistant.assistantId,
-    responseFormat: zodResponseFormat(ZodCurriculumOutlineSchema, 'validation_response')
-  }, (chunk) => {
-    console.log('Streamed chunk:', chunk)
-    // Handle each streamed chunk (you can accumulate, process, or update the UI with it)
-  })
+  const curriculumOutline = params.use_mockup_data ?
+    mockupCurriculumOutline.outline :
+    await createContentOutlineForCurriculum({
+      validatedObjective: params,
+      curriculumPlan: curriculumPlan,
+      threadId: assistant.threadId,
+      assistantId: assistant.assistantId,
+      responseFormat: zodResponseFormat(ZodCurriculumOutlineSchema, 'validation_response')
+    })
 
-
-  // IN HERE WE NEED TO HANDLE STREAM BY OBJECT, ONCE ONE OBJECT IS PARSED, ON TO A NEW ONE.
-
-
+  // Add this guard clause
+  if (!curriculumOutline) {
+    throw new Error('Failed to generate curriculum outline.')
+  }
   // Format data
   const courseTitle = curriculumOutline.title
   const courseDescription = curriculumOutline.description
@@ -130,12 +127,13 @@ async function generateCurriculumPlan(params: {
 }
 
 async function createContentOutlineForCurriculum(params: {
+  stream?: boolean
   validatedObjective: ValidatedObjective
   curriculumPlan: CurriculumPlan | undefined
   assistantId: string
   threadId: string
   responseFormat: AssistantResponseFormatOption | null | undefined
-}, processChunk: (chunk: string) => void) {
+}, processChunk?: (chunk: string) => void) {
   // Handle case where curriculumPlan is undefined
   if (!params.curriculumPlan) {
     console.error('Curriculum plan is undefined, cannot proceed with content outline generation.')
@@ -147,7 +145,7 @@ async function createContentOutlineForCurriculum(params: {
 
   // Use sendMessageAndParseResponse with streaming enabled and pass the processChunk callback
   const topics = await sendMessageAndParseResponse({
-    stream: true, // Streaming enabled
+    stream: params.stream,
     assistantId: params.assistantId,
     threadId: params.threadId,
     userMessageContent: userMsgForTopics,
