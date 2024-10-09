@@ -9,7 +9,6 @@ import bodyParser from 'body-parser'
 import fileUpload from 'express-fileupload'
 import cors from 'cors'
 import { getLocalNetworkIp } from './utils/utils'
-import { generateDalleImage } from './services/openai'
 
 const app = express()
 
