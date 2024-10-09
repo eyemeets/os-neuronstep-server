@@ -1,5 +1,4 @@
 // analyze.ts
-
 import { zodResponseFormat } from 'openai/helpers/zod'
 import { sendMessageAndParseResponse, setupAssistantAndThread } from '../openai' // Adjust the import path as needed
 import type { CurriculumPlan } from '../../types/curricula'
